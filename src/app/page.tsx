@@ -35,7 +35,7 @@ export default function Home() {
             <div className="flex flex-col gap-4">
               <CardContainer
                 className="m-[-4rem] p-[4rem] mb-[-0.5rem] pb-[0.5rem]"
-                containerClassName="z-10"
+                containerClassName="hover:z-50"
               >
                 <CardBody className="flex flex-col gap-2 bg-gray-50 group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-6 border">
                   <div className="flex flex-row items-center gap-3">
@@ -45,7 +45,7 @@ export default function Home() {
                     </CardItem>
                     <CardItem
                       as={"h3"}
-                      className="text-xl font-bold text-neutral-600 dark:text-white leading-none"
+                      className="text-xl font-bold text-neutral-600 text-foreground leading-none"
                       translateZ={15}
                     >
                       Arcadecord
@@ -68,7 +68,8 @@ export default function Home() {
                     <LinkPreview
                       url="https://arcadecord.com"
                       target="__blank"
-                      className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white border"
+                      side="bottom"
+                      className="px-4 py-2 rounded-xl text-xs font-normal text-foreground border"
                     >
                       Try now &nbsp;→
                     </LinkPreview>
@@ -77,7 +78,7 @@ export default function Home() {
               </CardContainer>
               <CardContainer
                 className="m-[-4rem] p-[4rem] mb-[-0.5rem] pb-[0.5rem]"
-                containerClassName="z-0"
+                containerClassName="hover:z-50"
               >
                 <CardBody className="flex flex-col gap-2 bg-gray-50 group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-6 border">
                   <div className="flex flex-row items-center gap-3">
@@ -91,7 +92,7 @@ export default function Home() {
                     </CardItem>
                     <CardItem
                       as={"h3"}
-                      className="text-xl font-bold text-neutral-600 dark:text-white leading-none"
+                      className="text-xl font-bold text-neutral-600 text-foreground leading-none"
                       translateZ={15}
                     >
                       MachinistMath
@@ -115,11 +116,101 @@ export default function Home() {
                     <LinkPreview
                       url="https://machinistmath.com"
                       target="__blank"
-                      className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white border"
+                      side="bottom"
+                      className="px-4 py-2 rounded-xl text-xs font-normal text-foreground border"
                     >
                       Try now &nbsp;→
                     </LinkPreview>
                   </CardItem>
+                </CardBody>
+              </CardContainer>
+            </div>
+            <h2 className="leading-none text-sm font-medium text-muted-foreground">
+              💖 My projects
+            </h2>
+            <div className="flex flex-col gap-4 w-full">
+              <CardContainer
+                className="m-[-4rem] p-[4rem] mb-[-0.5rem] pb-[0.5rem] flex flex-grow"
+                containerClassName="flex flex-grow hover:z-50"
+              >
+                <CardBody className="gap-2 bg-gray-50 group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-4 border">
+                  <div className="flex flex-col items-start gap-2">
+                    <CardItem
+                      as={"h3"}
+                      className="text-sm font-bold text-neutral-600 text-foreground leading-none"
+                      translateZ={15}
+                    >
+                      <LinkPreview
+                        url="https://github.com/notken12/licensesnip"
+                        target="__blank"
+                      >
+                        Licensesnip
+                      </LinkPreview>
+                    </CardItem>
+                    <CardItem
+                      as={"h3"}
+                      className="text-neutral-500 text-sm dark:text-neutral-300 leading-none"
+                      translateZ={15}
+                    >
+                      Add license headers to code.
+                    </CardItem>
+                  </div>
+                </CardBody>
+              </CardContainer>
+              <CardContainer
+                className="m-[-4rem] p-[4rem] mt-[-0.5rem] pt-[0.5rem] mb-[-0.5rem] pb-[0.5rem] flex flex-grow"
+                containerClassName="flex flex-grow hover:z-50"
+              >
+                <CardBody className="gap-2 bg-gray-50 group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-4 border">
+                  <div className="flex flex-col items-start gap-2">
+                    <CardItem
+                      as={"h3"}
+                      className="text-sm font-bold text-neutral-600 text-foreground leading-none"
+                      translateZ={15}
+                    >
+                      <LinkPreview
+                        url="https://cider-app.vercel.app"
+                        target="__blank"
+                      >
+                        Cider
+                      </LinkPreview>
+                    </CardItem>
+                    <CardItem
+                      as={"h3"}
+                      className="text-neutral-500 text-sm dark:text-neutral-300 leading-none"
+                      translateZ={15}
+                    >
+                      Extract events & reminders from docs.
+                    </CardItem>
+                  </div>
+                </CardBody>
+              </CardContainer>
+              <CardContainer
+                className="m-[-4rem] p-[4rem] mt-[-0.5rem] pt-[0.5rem] flex flex-grow"
+                containerClassName="flex flex-grow hover:z-50"
+              >
+                <CardBody className="gap-2 bg-gray-50 group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-4 border">
+                  <div className="flex flex-col items-start gap-2">
+                    <CardItem
+                      as={"h3"}
+                      className="text-sm font-bold text-neutral-600 text-foreground leading-none"
+                      translateZ={15}
+                    >
+                      <LinkPreview
+                        url="https://pharma-check.vercel.app"
+                        target="__blank"
+                      >
+                        PharmaCheck
+                      </LinkPreview>
+                    </CardItem>
+                    <CardItem
+                      as={"h3"}
+                      className="text-neutral-500 text-sm dark:text-neutral-300"
+                      translateZ={15}
+                    >
+                      Scan to check dangerous drug interactions.
+                    </CardItem>
+                  </div>
                 </CardBody>
               </CardContainer>
             </div>
