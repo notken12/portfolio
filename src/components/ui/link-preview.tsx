@@ -129,7 +129,7 @@ export const LinkPreview = ({
                   },
                 }}
                 exit={{ opacity: 0, y: 20, scale: 0.6 }}
-                className="shadow-xl rounded-xl z-50"
+                className="shadow-xl rounded-xl z-50 transform-gpu"
                 style={{
                   x: translateX,
                 }}
@@ -140,7 +140,6 @@ export const LinkPreview = ({
                   target={target}
                   style={{
                     fontSize: 0,
-                    // transform: "translateX(calc(-50% + 20px))",
                   }}
                 >
                   <Image
@@ -150,7 +149,7 @@ export const LinkPreview = ({
                     quality={quality}
                     layout={layout}
                     priority={true}
-                    className="rounded-lg"
+                    className="rounded-lg z-50"
                     alt="preview image"
                   />
                 </Link>

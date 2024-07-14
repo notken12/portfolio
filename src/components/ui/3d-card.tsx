@@ -10,6 +10,20 @@ import React, {
   useEffect,
 } from "react";
 
+function mouseWithin(mouseX: number, mouseY: number, el: HTMLElement) {
+  const { left, top, width, height } = el.getBoundingClientRect();
+
+  if (
+    mouseX >= left &&
+    mouseY >= top &&
+    mouseX <= left + width &&
+    mouseY <= top + height
+  ) {
+    return true;
+  }
+  return false;
+}
+
 const MouseEnterContext = createContext<
   [boolean, React.Dispatch<React.SetStateAction<boolean>>] | undefined
 >(undefined);
@@ -26,25 +40,38 @@ export const CardContainer = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const [isMouseEntered, setIsMouseEntered] = useState(false);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseMove = (e: MouseEvent) => {
     if (!containerRef.current) return;
-    const { left, top, width, height } =
-      containerRef.current.getBoundingClientRect();
-    const x = (e.clientX - left - width / 2) / 25;
-    const y = (e.clientY - top - height / 2) / 25;
-    containerRef.current.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+    const entered = mouseWithin(e.clientX, e.clientY, containerRef.current);
+    setIsMouseEntered(entered);
+    if (!entered) {
+      containerRef.current.style.transform = `rotateY(0deg) rotateX(0deg)`;
+    } else {
+      const { left, top, width, height } =
+        containerRef.current.getBoundingClientRect();
+      const x = (e.clientX - left - width / 2) / 25;
+      const y = (e.clientY - top - height / 2) / 25;
+      containerRef.current.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+    }
   };
 
-  const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
-    setIsMouseEntered(true);
-    if (!containerRef.current) return;
-  };
+  // const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
+  //   setIsMouseEntered(true);
+  //   if (!containerRef.current) return;
+  // };
 
-  const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!containerRef.current) return;
-    setIsMouseEntered(false);
-    containerRef.current.style.transform = `rotateY(0deg) rotateX(0deg)`;
-  };
+  // const handleMouseLeave = (e: React.MouseEvent<HTMLDivElement>) => {
+  //   if (!containerRef.current) return;
+  //   setIsMouseEntered(false);
+  //   containerRef.current.style.transform = `rotateY(0deg) rotateX(0deg)`;
+  // };
+
+  useEffect(() => {
+    document.addEventListener("mousemove", (e) => {
+      handleMouseMove(e);
+    });
+  }, []);
+
   return (
     <MouseEnterContext.Provider value={[isMouseEntered, setIsMouseEntered]}>
       <div
@@ -55,11 +82,11 @@ export const CardContainer = ({
       >
         <div
           ref={containerRef}
-          onMouseEnter={handleMouseEnter}
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
+          // onMouseEnter={handleMouseEnter}
+          // onMouseMove={handleMouseMove}
+          // onMouseLeave={handleMouseLeave}
           className={cn(
-            "flex items-center justify-center relative transition-all duration-200 ease-linear",
+            "flex items-center justify-center transition-all duration-200 ease-linear pointer-events-none",
             className
           )}
           style={{
@@ -83,7 +110,7 @@ export const CardBody = ({
   return (
     <div
       className={cn(
-        "h-96 w-96 [transform-style:preserve-3d]  [&>*]:[transform-style:preserve-3d]",
+        "[transform-style:preserve-3d]  [&>*]:[transform-style:preserve-3d] pointer-events-auto",
         className
       )}
     >
