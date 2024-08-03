@@ -30,10 +30,27 @@ export default function Home() {
               I'm a 17 year old full-stack developer who loves my dog Mango.
             </p>
           </section>
-          {/* <section className="w-full flex flex-col items-start">
-            <div className="border border-muted-foreground w-full aspect-[16/9] bg-muted"></div>
-            <div className="border border-muted-foreground w-full h-12 border-t-0 bg-muted transform-style-3d rotate-x-45 perspective-[10px]"></div>
-          </section> */}
+          <section className="w-full flex flex-col items-start">
+            <div className="border border-neutral-300 dark:border-neutral-700 w-full aspect-[16/9] bg-muted dark:bg-[#303030] rounded-md shadow-xl relative flex flex-col items-center">
+              <div className="flex gap-7 absolute bottom-8 w-full justify-center items-center">
+                <Image
+                  src="/keyboard.svg"
+                  width={1027}
+                  height={352}
+                  alt="Keyboard"
+                  className="aspect-[1027/352] h-14 rounded object-contain object-center shadow-md max-w-fit"
+                />
+                <Image
+                  src="/pen.svg"
+                  width={64}
+                  height={606}
+                  alt="Pen"
+                  className="aspect-[64/606] h-16 rounded object-contain object-center max-w-fit dark:opacity-50"
+                />
+              </div>
+            </div>
+            {/* <div className="border border-muted-foreground w-full h-12 border-t-0 bg-muted transform-style-3d rotate-x-45 perspective-[10px]"></div> */}
+          </section>
           <section className="w-full flex flex-col items-start">
             <h2 className="scroll-m-20 text-xl font-semibold tracking-tight">
               My projects
