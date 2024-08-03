@@ -18,7 +18,7 @@ import { MapPin, MapPinned } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="w-full relative flex flex-col flex-grow items-center justify-start bg-neutral-350 dark:bg-black">
+    <div className="w-full relative flex flex-col flex-grow items-center justify-start bg-background dark:bg-neutral-800 lg:bg-neutral-350 lg:dark:bg-black">
       <div className="max-w-screen-md h-full p-8 bg-background shadow-[0px_0px_200px_220px_hsl(var(--background))] dark:bg-neutral-800 dark:shadow-[0px_0px_200px_220px_rgb(38_38_38_/_var(--tw-bg-opacity))]">
         <div className="flex flex-col flex-grow max-w-screen-md w-full mt-8 gap-8">
           <section className="w-full flex flex-col items-start">
