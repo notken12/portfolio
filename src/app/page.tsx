@@ -30,6 +30,10 @@ export default function Home() {
               I'm a 17 year old full-stack developer who loves my dog Mango.
             </p>
           </section>
+          {/* <section className="w-full flex flex-col items-start">
+            <div className="border border-muted-foreground w-full aspect-[16/9] bg-muted"></div>
+            <div className="border border-muted-foreground w-full h-12 border-t-0 bg-muted transform-style-3d rotate-x-45 perspective-[10px]"></div>
+          </section> */}
           <section className="w-full flex flex-col items-start">
             <h2 className="scroll-m-20 text-xl font-semibold tracking-tight">
               My projects
