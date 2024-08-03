@@ -13,210 +13,172 @@ import Link from "next/link";
 import { LinkPreview } from "@/components/ui/link-preview";
 import { BackgroundGradient } from "@/components/ui/background-gradient";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
+import { MapPin, MapPinned } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="w-full dark:bg-black bg-white  dark:bg-grid-small-white/[0.2] bg-grid-small-black/[0.2] relative flex flex-grow items-center justify-center">
-      {/* Radial gradient for the container to give a faded look */}
-      <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-      <BackgroundGradient className="max-w-96 p-0" containerClassName="p-0">
-        <Card>
-          <CardHeader>
-            <CardTitle>Ken Zhou</CardTitle>
-            <CardDescription>
-              I&apos;m a high school senior in Northern Virginia. I love my dog
-              Mango and building cool apps.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="flex flex-col gap-4">
-            <h2 className="leading-none text-sm font-medium text-muted-foreground">
-              🔨 I&apos;m currently making...
-            </h2>
-            <div className="flex flex-col gap-4">
-              <CardContainer
-                className="m-[-4rem] p-[4rem] mb-[-0.5rem] pb-[0.5rem]"
-                containerClassName="hover:z-50"
+    <div className="w-full relative flex flex-col flex-grow items-center justify-start bg-background p-8">
+      <div className="flex flex-col flex-grow max-w-screen-md w-full mt-8 gap-8">
+        <section className="w-full flex flex-col items-start">
+          <h1 className="mt-8 scroll-m-20 text-2xl font-semibold tracking-tight">
+            Hi, I'm Ken.
+          </h1>
+          <div className="flex-grow"></div>
+          <p className="leading-7 [&:not(:first-child)]:mt-3">
+            I'm a 17 year old full-stack developer who loves my dog Mango.
+          </p>
+        </section>
+        <section className="w-full flex flex-col items-start">
+          <h2 className="scroll-m-20 text-xl font-semibold tracking-tight">
+            My projects
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-[auto_1fr] mt-6 sm:gap-y-6">
+            <div className="flex flex-row sm:flex-col justify-between sm:justify-normal items-center gap-1 sm:items-end mb-4 sm:mb-0">
+              <LinkPreview
+                className="font-semibold text-primary underline underline-offset-4 leading-7"
+                url="https://arcadecord.com"
               >
-                <CardBody className="flex flex-col gap-2 bg-gray-50 group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-6 border">
-                  <div className="flex flex-row items-center gap-3">
-                    <CardItem as={Avatar} translateZ={15} className="w-6 h-6">
-                      <AvatarImage src="/arcadecordicon.svg" />
-                      <AvatarFallback></AvatarFallback>
-                    </CardItem>
-                    <CardItem
-                      as={"h3"}
-                      className="text-xl font-bold text-neutral-600 text-foreground leading-none"
-                      translateZ={15}
-                    >
-                      Arcadecord
-                    </CardItem>
-                  </div>
-
-                  <CardItem
-                    as={"p"}
-                    className="text-neutral-500 text-sm max-w-sm dark:text-neutral-300"
-                    translateZ={10}
-                  >
-                    The GamePigeon of Discord. Play fun minigames with friends
-                    in your servers.
-                  </CardItem>
-
-                  <CardItem
-                    className="flex justify-between items-center mt-1"
-                    translateZ={20}
-                  >
-                    <LinkPreview
-                      url="https://arcadecord.com"
-                      target="__blank"
-                      side="bottom"
-                      className="px-4 py-2 rounded-xl text-xs font-normal text-foreground border"
-                    >
-                      Try now &nbsp;→
-                    </LinkPreview>
-                  </CardItem>
-                </CardBody>
-              </CardContainer>
-              <CardContainer
-                className="m-[-4rem] p-[4rem] mb-[-0.5rem] pb-[0.5rem]"
-                containerClassName="hover:z-50"
-              >
-                <CardBody className="flex flex-col gap-2 bg-gray-50 group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-6 border">
-                  <div className="flex flex-row items-center gap-3">
-                    <CardItem
-                      as={Avatar}
-                      translateZ={15}
-                      className="w-6 h-6 rounded-md"
-                    >
-                      <AvatarImage src="/machinistmath-icon.svg" />
-                      <AvatarFallback></AvatarFallback>
-                    </CardItem>
-                    <CardItem
-                      as={"h3"}
-                      className="text-xl font-bold text-neutral-600 text-foreground leading-none"
-                      translateZ={15}
-                    >
-                      MachinistMath
-                    </CardItem>
-                  </div>
-
-                  <CardItem
-                    as={"p"}
-                    className="text-neutral-500 text-sm max-w-sm dark:text-neutral-300"
-                    translateZ={10}
-                  >
-                    Simplify tedious and error prone machining calculations with
-                    this voice-powered calculator, even when your hands are
-                    dirty.
-                  </CardItem>
-
-                  <CardItem
-                    className="flex justify-between items-center mt-1"
-                    translateZ={20}
-                  >
-                    <LinkPreview
-                      url="https://machinistmath.com"
-                      target="__blank"
-                      side="bottom"
-                      className="px-4 py-2 rounded-xl text-xs font-normal text-foreground border"
-                    >
-                      Try now &nbsp;→
-                    </LinkPreview>
-                  </CardItem>
-                </CardBody>
-              </CardContainer>
+                Arcadecord
+              </LinkPreview>
+              <Badge variant={"default"}>🏆 Top.gg Staff Pick</Badge>
             </div>
-            <h2 className="leading-none text-sm font-medium text-muted-foreground">
-              💖 My projects
-            </h2>
-            <div className="flex flex-col gap-4 w-full">
-              <CardContainer
-                className="m-[-4rem] p-[4rem] mb-[-0.5rem] pb-[0.5rem] flex flex-grow"
-                containerClassName="flex flex-grow hover:z-50"
+            <p className="leading-7 mb-6 sm:mb-0 sm:ml-4">
+              The GamePigeon of Discord. Play fun minigames with friends in your
+              online communities. Used in&nbsp;
+              <span className="font-mono font-semibold">2500+</span> servers.
+            </p>
+
+            <div className="flex flex-row sm:flex-col justify-between sm:justify-normal items-center gap-1 sm:items-end mb-4 sm:mb-0">
+              <LinkPreview
+                className="font-semibold text-primary underline underline-offset-4 leading-7"
+                url="https://cider-app.vercel.app"
               >
-                <CardBody className="gap-2 bg-gray-50 group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-4 border">
-                  <div className="flex flex-col items-start gap-2">
-                    <CardItem
-                      as={"h3"}
-                      className="text-sm font-bold text-neutral-600 text-foreground leading-none"
-                      translateZ={15}
-                    >
-                      <LinkPreview
-                        url="https://github.com/notken12/licensesnip"
-                        target="__blank"
-                      >
-                        Licensesnip
-                      </LinkPreview>
-                    </CardItem>
-                    <CardItem
-                      as={"h3"}
-                      className="text-neutral-500 text-sm dark:text-neutral-300 leading-none"
-                      translateZ={15}
-                    >
-                      Add license headers to code.
-                    </CardItem>
-                  </div>
-                </CardBody>
-              </CardContainer>
-              <CardContainer
-                className="m-[-4rem] p-[4rem] mt-[-0.5rem] pt-[0.5rem] mb-[-0.5rem] pb-[0.5rem] flex flex-grow"
-                containerClassName="flex flex-grow hover:z-50"
-              >
-                <CardBody className="gap-2 bg-gray-50 group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-4 border">
-                  <div className="flex flex-col items-start gap-2">
-                    <CardItem
-                      as={"h3"}
-                      className="text-sm font-bold text-neutral-600 text-foreground leading-none"
-                      translateZ={15}
-                    >
-                      <LinkPreview
-                        url="https://cider-app.vercel.app"
-                        target="__blank"
-                      >
-                        Cider
-                      </LinkPreview>
-                    </CardItem>
-                    <CardItem
-                      as={"h3"}
-                      className="text-neutral-500 text-sm dark:text-neutral-300 leading-none"
-                      translateZ={15}
-                    >
-                      Extract events & reminders from docs.
-                    </CardItem>
-                  </div>
-                </CardBody>
-              </CardContainer>
-              <CardContainer
-                className="m-[-4rem] p-[4rem] mt-[-0.5rem] pt-[0.5rem] flex flex-grow"
-                containerClassName="flex flex-grow hover:z-50"
-              >
-                <CardBody className="gap-2 bg-gray-50 group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-4 border">
-                  <div className="flex flex-col items-start gap-2">
-                    <CardItem
-                      as={"h3"}
-                      className="text-sm font-bold text-neutral-600 text-foreground leading-none"
-                      translateZ={15}
-                    >
-                      <LinkPreview
-                        url="https://pharma-check.vercel.app"
-                        target="__blank"
-                      >
-                        PharmaCheck
-                      </LinkPreview>
-                    </CardItem>
-                    <CardItem
-                      as={"h3"}
-                      className="text-neutral-500 text-sm dark:text-neutral-300"
-                      translateZ={15}
-                    >
-                      Scan to check dangerous drug interactions.
-                    </CardItem>
-                  </div>
-                </CardBody>
-              </CardContainer>
+                Cider
+              </LinkPreview>
+              <Badge variant={"default"}>🏆 Best Lifestyle Hack</Badge>
             </div>
-          </CardContent>
-        </Card>
-      </BackgroundGradient>
+
+            <p className="leading-7 mb-6 sm:mb-0 sm:ml-4">
+              Add reminders from documents into your calendar.
+              <a
+                className="text-muted-foreground text-sm ml-1 underline underline-offset-4"
+                href="https://hacktj.org"
+                target="_blank"
+              >
+                <MapPin className="w-4 h-4 inline-flex align-text-top mx-1" />
+                HackTJ 11.0
+              </a>
+            </p>
+
+            <div className="flex flex-row sm:flex-col justify-between sm:justify-normal items-center gap-1 sm:items-end mb-4 sm:mb-0">
+              <LinkPreview
+                className="font-semibold text-primary underline underline-offset-4 leading-7"
+                url="https://machinistmath.com"
+              >
+                MachinistMath
+              </LinkPreview>
+              <Badge variant={"default"}>🏆 Best Technical Venture</Badge>
+            </div>
+            <p className="leading-7 mb-6 sm:mb-0 sm:ml-4">
+              Simplify tedious and error prone machining calculations with this
+              voice-powered calculator, even when your hands are dirty.
+              <a
+                className="text-muted-foreground text-sm ml-1 underline underline-offset-4"
+                href="https://venturecamp.org"
+                target="_blank"
+              >
+                <MapPin className="w-4 h-4 inline-flex align-text-top mx-1" />
+                Venture Camp S24
+              </a>
+            </p>
+
+            <div className="flex flex-row sm:flex-col justify-between sm:justify-normal items-center gap-1 sm:items-end mb-4 sm:mb-0">
+              <LinkPreview
+                className="font-semibold text-primary underline underline-offset-4 leading-7"
+                url="https://crates.io/crates/licensesnip"
+              >
+                Licensesnip
+              </LinkPreview>
+            </div>
+            <p className="leading-7 mb-6 sm:mb-0 sm:ml-4">
+              Automatically add license headers to source code.&nbsp;
+              <span className="font-mono font-semibold">5000+</span>
+              &nbsp;downloads.
+            </p>
+
+            <div className="flex flex-row sm:flex-col justify-between sm:justify-normal items-center gap-1 sm:items-end mb-4 sm:mb-0">
+              <LinkPreview
+                className="font-semibold text-primary underline underline-offset-4 leading-7"
+                url="https://pharma-check.vercel.app"
+              >
+                PharmaCheck
+              </LinkPreview>
+            </div>
+            <p className="leading-7 mb-6 sm:mb-0 sm:ml-4">
+              Scan medicine to check for dangerous drug interactions.
+            </p>
+
+            <div className="flex flex-row sm:flex-col justify-between sm:justify-normal items-center gap-1 sm:items-end mb-4 sm:mb-0">
+              <LinkPreview
+                className="font-semibold text-primary underline underline-offset-4 leading-7"
+                url="https://github.com/notken12/mangochat"
+              >
+                MangoChat
+              </LinkPreview>
+              <Badge variant={"default"}>🏆 Best Overall Hack</Badge>
+            </div>
+            <p className="leading-7 mb-6 sm:mb-0 sm:ml-4">
+              Chat and send money securely using end-to-end encryption and
+              decentralized storage.
+              <a
+                className="text-muted-foreground text-sm ml-1 underline underline-offset-4"
+                href="https://hacktj.org"
+                target="_blank"
+              >
+                <MapPin className="w-4 h-4 inline-flex align-text-top mx-1" />
+                HackTJ 9.0
+              </a>
+            </p>
+          </div>
+        </section>
+      </div>
     </div>
   );
+}
+
+{
+  /* <section className="w-full flex flex-col items-start">
+  <h2 className="scroll-m-20 text-xl font-semibold tracking-tight">
+    My projects
+  </h2>
+  <div className="flex flex-row mt-5">
+    <div className="flex flex-row items-start gap-4">
+      <a
+        className="font-semibold text-primary underline underline-offset-4 leading-7 [&:not(:first-child)]:mt-6 w-32"
+        href="https://machinistmath.com"
+      >
+        Arcadecord
+      </a>
+      <p className="leading-7">
+        The GamePigeon of Discord. Play fun minigames with friends in your
+        servers.
+      </p>
+    </div>
+  </div>
+  <div className="flex flex-row mt-5">
+    <div className="flex flex-row items-start gap-4">
+      <a
+        className="font-semibold text-primary underline underline-offset-4 leading-7 [&:not(:first-child)]:mt-6 w-32"
+        href="https://machinistmath.com"
+      >
+        MachinistMath
+      </a>
+      <p className="leading-7 flex">
+        Simplify tedious and error prone machining calculations with this
+        voice-powered calculator, even when your hands are dirty.
+      </p>
+    </div>
+  </div>
+</section>; */
 }
