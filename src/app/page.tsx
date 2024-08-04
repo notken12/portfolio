@@ -38,14 +38,28 @@ export default function Home() {
                   width={1027}
                   height={352}
                   alt="Keyboard"
-                  className="aspect-[1027/352] h-14 rounded object-contain object-center shadow-md max-w-fit"
+                  className="aspect-[1027/352] h-14 rounded object-contain object-center shadow-md max-w-fit dark:hidden"
+                />
+                <Image
+                  src="/keyboard-dark.svg"
+                  width={1027}
+                  height={352}
+                  alt="Keyboard"
+                  className="aspect-[1027/352] h-14 rounded object-contain object-center shadow-md max-w-fit hidden dark:block"
                 />
                 <Image
                   src="/pen.svg"
                   width={64}
                   height={606}
                   alt="Pen"
-                  className="aspect-[64/606] h-16 rounded object-contain object-center max-w-fit dark:opacity-50"
+                  className="aspect-[64/606] h-16 object-contain object-center max-w-fit dark:hidden"
+                />
+                <Image
+                  src="/pen-dark.svg"
+                  width={64}
+                  height={606}
+                  alt="Pen"
+                  className="aspect-[64/606] h-16 object-contain object-center max-w-fit hidden dark:block"
                 />
               </div>
             </div>
