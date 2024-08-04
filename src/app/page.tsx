@@ -31,38 +31,91 @@ export default function Home() {
             </p>
           </section>
           <section className="w-full flex flex-col items-start">
-            <div className="border border-neutral-300 dark:border-neutral-700 w-full aspect-[16/9] bg-muted dark:bg-[#303030] rounded-md shadow-xl relative flex flex-col items-center">
-              <div className="flex gap-7 absolute bottom-8 w-full justify-center items-center">
-                <Image
-                  src="/keyboard.svg"
-                  width={1027}
-                  height={352}
-                  alt="Keyboard"
-                  className="aspect-[1027/352] h-14 rounded object-contain object-center shadow-md max-w-fit dark:hidden"
-                />
-                <Image
-                  src="/keyboard-dark.svg"
-                  width={1027}
-                  height={352}
-                  alt="Keyboard"
-                  className="aspect-[1027/352] h-14 rounded object-contain object-center shadow-md max-w-fit hidden dark:block"
-                />
-                <Image
-                  src="/pen.svg"
-                  width={64}
-                  height={606}
-                  alt="Pen"
-                  className="aspect-[64/606] h-16 object-contain object-center max-w-fit dark:hidden"
-                />
-                <Image
-                  src="/pen-dark.svg"
-                  width={64}
-                  height={606}
-                  alt="Pen"
-                  className="aspect-[64/606] h-16 object-contain object-center max-w-fit hidden dark:block"
-                />
-              </div>
-            </div>
+            <CardContainer
+              containerClassName="flex flex-grow w-full"
+              className="flex flex-grow w-full"
+              rotateness={100}
+            >
+              <CardBody className="border border-neutral-300 dark:border-neutral-700 w-full aspect-[8/5] sm:aspect-[16/9] bg-muted dark:bg-[#303030] rounded-md shadow-xl relative flex flex-col items-center">
+                <div className="flex flex-col mb-4 sm:mb-8 flex-grow w-full">
+                  <div
+                    className="flex-grow relative flex"
+                    style={{ perspective: "1000px" }}
+                  >
+                    <CardItem
+                      as={"a"}
+                      className="flex flex-col bg-neutral-200 dark:bg-muted shadow-2xl border border-neutral-350 dark:border-neutral-700 rounded-md h-fit self-start absolute top-[27%] left-[12%] w-[30%] -rotate-6"
+                      rotateZ={-6}
+                      translateZ={30}
+                      href="https://neurallab.vercel.app"
+                    >
+                      <div className="flex justify-start p-1 gap-[0.2rem] h-4 items-center">
+                        <div className="bg-red-500 rounded-full w-2 h-2"></div>
+                        <div className="bg-yellow-500 rounded-full w-2 h-2"></div>
+                        <div className="bg-green-500 rounded-full w-2 h-2"></div>
+                      </div>
+                      <Image
+                        src="/neurallab.png"
+                        width={755}
+                        height={429}
+                        alt="Keyboard"
+                        className="aspect-[755/429] object-contain object-center shadow-md max-w-fit w-auto h-full rounded-b-md"
+                      />
+                    </CardItem>
+                    <CardItem
+                      as={"a"}
+                      className="flex flex-col bg-neutral-200 dark:bg-muted shadow-2xl border-8 outline outline-1 outline-neutral-350 dark:outline-neutral-700 rounded-md h-fit self-start absolute top-[27%] right-[12%] w-[20%] rotate-6"
+                      rotateZ={6}
+                      translateZ={30}
+                      href="https://neurallab.vercel.app"
+                    >
+                      {/* <div className="flex justify-start p-1 gap-[0.2rem] h-4 items-center">
+                        <div className="bg-red-500 rounded-full w-2 h-2"></div>
+                        <div className="bg-yellow-500 rounded-full w-2 h-2"></div>
+                        <div className="bg-green-500 rounded-full w-2 h-2"></div>
+                      </div> */}
+                      <Image
+                        src="/usbstation.jpg"
+                        width={1757}
+                        height={2002}
+                        alt="Keyboard"
+                        className="aspect-[1757/2002] object-contain object-center shadow-md max-w-fit w-auto h-full rounded"
+                      />
+                    </CardItem>
+                  </div>
+                  <div className="flex flex-row gap-7 justify-center items-center">
+                    <Image
+                      src="/keyboard.svg"
+                      width={1027}
+                      height={352}
+                      alt="Keyboard"
+                      className="aspect-[1027/352] h-10 sm:h-14 rounded object-contain object-center shadow-md max-w-fit dark:hidden w-auto"
+                    />
+                    <Image
+                      src="/keyboard-dark.svg"
+                      width={1027}
+                      height={352}
+                      alt="Keyboard"
+                      className="aspect-[1027/352] h-10 sm:h-14 rounded object-contain object-center shadow-md max-w-fit hidden dark:block w-auto"
+                    />
+                    <Image
+                      src="/pen.svg"
+                      width={64}
+                      height={606}
+                      alt="Pen"
+                      className="aspect-[64/606] h-12 sm:h-16 object-contain object-center max-w-fit dark:hidden w-auto"
+                    />
+                    <Image
+                      src="/pen-dark.svg"
+                      width={64}
+                      height={606}
+                      alt="Pen"
+                      className="aspect-[64/606] h-12 sm:h-16 object-contain object-center max-w-fit hidden dark:block w-auto"
+                    />
+                  </div>
+                </div>
+              </CardBody>
+            </CardContainer>
             {/* <div className="border border-muted-foreground w-full h-12 border-t-0 bg-muted transform-style-3d rotate-x-45 perspective-[10px]"></div> */}
           </section>
           <section className="w-full flex flex-col items-start">
