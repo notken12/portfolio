@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <div className="w-full relative flex flex-col flex-grow items-center justify-start bg-background dark:bg-neutral-800 lg:bg-neutral-350 lg:dark:bg-black">
       <div className="max-w-screen-md h-full p-8 bg-background shadow-[0px_0px_200px_220px_hsl(var(--background))] dark:bg-neutral-800 dark:shadow-[0px_0px_200px_220px_rgb(38_38_38_/_var(--tw-bg-opacity))]">
-        <div className="flex flex-col flex-grow max-w-screen-md w-full mt-8 gap-8">
+        <div className="flex flex-col flex-grow max-w-screen-md w-full mt-8 gap-8 mb-16">
           <section className="w-full flex flex-col items-start">
             <h1 className="mt-8 scroll-m-20 text-3xl font-semibold tracking-tight">
               Hi, I'm Ken.
@@ -30,7 +30,12 @@ export default function Home() {
               I'm a 17 year old full-stack developer who loves my dog Mango.
             </p>
           </section>
-          <section className="w-full flex flex-col items-start">
+
+          <section className="w-full flex flex-col items-start mb-8">
+            <h2 className="scroll-m-20 text-xl font-semibold tracking-tight">
+              🛠️ What's on my desk
+            </h2>
+            <div className="h-7"></div>
             <CardContainer
               containerClassName="flex flex-grow w-full"
               className="flex flex-grow w-full"
@@ -49,10 +54,13 @@ export default function Home() {
                       translateZ={30}
                       href="https://neurallab.vercel.app"
                     >
-                      <div className="flex justify-start p-1 gap-[0.2rem] h-4 items-center">
+                      <div className="flex justify-start p-1 gap-[0.2rem] h-4 items-center relative">
                         <div className="bg-red-500 rounded-full w-2 h-2"></div>
                         <div className="bg-yellow-500 rounded-full w-2 h-2"></div>
                         <div className="bg-green-500 rounded-full w-2 h-2"></div>
+                        <p className="text-xs text-muted-foreground font-handwriting absolute inset-0 text-center leading-[1.1rem] hidden sm:block">
+                          NeuralLab
+                        </p>
                       </div>
                       <Image
                         src="/neurallab.png"
@@ -63,11 +71,9 @@ export default function Home() {
                       />
                     </CardItem>
                     <CardItem
-                      as={"a"}
                       className="flex flex-col bg-neutral-200 dark:bg-muted shadow-2xl border-8 outline outline-1 outline-neutral-350 dark:outline-neutral-700 rounded-md h-fit self-start absolute top-[27%] right-[12%] w-[20%] rotate-6"
                       rotateZ={6}
                       translateZ={30}
-                      href="https://neurallab.vercel.app"
                     >
                       {/* <div className="flex justify-start p-1 gap-[0.2rem] h-4 items-center">
                         <div className="bg-red-500 rounded-full w-2 h-2"></div>
@@ -81,6 +87,9 @@ export default function Home() {
                         alt="Keyboard"
                         className="aspect-[1757/2002] object-contain object-center shadow-md max-w-fit w-auto h-full rounded"
                       />
+                      <p className="text-xs text-muted-foreground font-handwriting leading-none mt-1 mb-[-0.25rem]">
+                        USB Station
+                      </p>
                     </CardItem>
                   </div>
                   <div className="flex flex-row gap-7 justify-center items-center">
@@ -116,8 +125,8 @@ export default function Home() {
                 </div>
               </CardBody>
             </CardContainer>
-            {/* <div className="border border-muted-foreground w-full h-12 border-t-0 bg-muted transform-style-3d rotate-x-45 perspective-[10px]"></div> */}
           </section>
+
           <section className="w-full flex flex-col items-start">
             <h2 className="scroll-m-20 text-xl font-semibold tracking-tight">
               My projects
@@ -235,40 +244,4 @@ export default function Home() {
       </div>
     </div>
   );
-}
-
-{
-  /* <section className="w-full flex flex-col items-start">
-  <h2 className="scroll-m-20 text-xl font-semibold tracking-tight">
-    My projects
-  </h2>
-  <div className="flex flex-row mt-5">
-    <div className="flex flex-row items-start gap-4">
-      <a
-        className="font-semibold text-primary underline underline-offset-4 leading-7 [&:not(:first-child)]:mt-6 w-32"
-        href="https://machinistmath.com"
-      >
-        Arcadecord
-      </a>
-      <p className="leading-7">
-        The GamePigeon of Discord. Play fun minigames with friends in your
-        servers.
-      </p>
-    </div>
-  </div>
-  <div className="flex flex-row mt-5">
-    <div className="flex flex-row items-start gap-4">
-      <a
-        className="font-semibold text-primary underline underline-offset-4 leading-7 [&:not(:first-child)]:mt-6 w-32"
-        href="https://machinistmath.com"
-      >
-        MachinistMath
-      </a>
-      <p className="leading-7 flex">
-        Simplify tedious and error prone machining calculations with this
-        voice-powered calculator, even when your hands are dirty.
-      </p>
-    </div>
-  </div>
-</section>; */
 }

@@ -85,6 +85,7 @@ const config = {
       fontFamily: {
         sans: ["var(--font-geist-sans)"],
         mono: ["var(--font-geist-mono)"],
+        handwriting: ["Virgil"],
       },
     },
   },
