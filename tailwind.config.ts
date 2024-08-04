@@ -112,7 +112,7 @@ const config = {
         { values: flattenColorPalette(theme("backgroundColor")), type: "color" }
       );
     },
-    require("@xpd/tailwind-3dtransforms"),
+    // require("@xpd/tailwind-3dtransforms"),
   ],
 } satisfies Config;
 
