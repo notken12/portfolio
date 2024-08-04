@@ -15,6 +15,7 @@ import { BackgroundGradient } from "@/components/ui/background-gradient";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, MapPinned } from "lucide-react";
+import { ModeToggle } from "@/components/mode-toggle";
 
 export default function Home() {
   return (
@@ -22,18 +23,21 @@ export default function Home() {
       <div className="max-w-screen-md h-full p-8 bg-background shadow-[0px_0px_200px_220px_hsl(var(--background))] dark:bg-neutral-800 dark:shadow-[0px_0px_200px_220px_rgb(38_38_38_/_var(--tw-bg-opacity))]">
         <div className="flex flex-col flex-grow max-w-screen-md w-full mt-8 gap-8 mb-16">
           <section className="w-full flex flex-col items-start">
-            <h1 className="mt-8 scroll-m-20 text-3xl font-semibold tracking-tight">
-              Hi, I'm Ken.
-            </h1>
-            <div className="flex-grow"></div>
+            <div className="flex flex-row justify-between w-full items-center mt-8">
+              <h1 className="scroll-m-20 text-3xl font-semibold tracking-tight">
+                Hi, I'm Ken.
+              </h1>
+              <ModeToggle />
+            </div>
+
             <p className="leading-7 [&:not(:first-child)]:mt-3">
               I'm a 17 year old full-stack developer who loves my dog Mango.
             </p>
           </section>
 
           <section className="w-full flex flex-col items-start mb-8">
-            <h2 className="scroll-m-20 text-xl font-semibold tracking-tight">
-              🛠️ What's on my desk
+            <h2 className="scroll-m-20 text-xl font-semibold tracking-tight font-handwriting">
+              🛠️ Currently building...
             </h2>
             <div className="h-7"></div>
             <CardContainer
@@ -49,7 +53,7 @@ export default function Home() {
                   >
                     <CardItem
                       as={"a"}
-                      className="flex flex-col bg-neutral-200 dark:bg-muted shadow-2xl border border-neutral-350 dark:border-neutral-700 rounded-md h-fit self-start absolute top-[27%] left-[12%] w-[30%] -rotate-6"
+                      className="flex flex-col bg-neutral-200 dark:bg-muted shadow-xl border border-neutral-350 dark:border-neutral-700 rounded-md h-fit self-start absolute top-[28%] left-[16%] w-[30%] -rotate-6"
                       rotateZ={-6}
                       translateZ={30}
                       href="https://neurallab.vercel.app"
@@ -71,7 +75,7 @@ export default function Home() {
                       />
                     </CardItem>
                     <CardItem
-                      className="flex flex-col bg-neutral-200 dark:bg-muted shadow-2xl border-8 outline outline-1 outline-neutral-350 dark:outline-neutral-700 rounded-md h-fit self-start absolute top-[27%] right-[12%] w-[20%] rotate-6"
+                      className="flex flex-col bg-neutral-200 dark:bg-muted shadow-xl bg-border dark:border-muted border-8 outline outline-1 outline-neutral-350 dark:outline-neutral-700 rounded-md h-fit self-start absolute top-[24%] right-[17%] w-[20%] rotate-6"
                       rotateZ={6}
                       translateZ={30}
                     >
