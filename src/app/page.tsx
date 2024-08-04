@@ -96,9 +96,9 @@ export default function Home() {
               </div>
 
               <p className="leading-7 mb-6 sm:mb-0 sm:ml-4">
-                Add reminders from documents into your calendar.
+                Add reminders from documents into your calendar.&nbsp;
                 <a
-                  className="text-muted-foreground text-sm ml-1 underline underline-offset-4"
+                  className="text-muted-foreground text-sm underline underline-offset-4 text-nowrap"
                   href="https://hacktj.org"
                   target="_blank"
                 >
@@ -118,9 +118,9 @@ export default function Home() {
               </div>
               <p className="leading-7 mb-6 sm:mb-0 sm:ml-4">
                 Simplify tedious and error prone machining calculations with
-                this voice-powered calculator, even when your hands are dirty.
+                this voice-powered calculator, even with dirty hands.&nbsp;
                 <a
-                  className="text-muted-foreground text-sm ml-1 underline underline-offset-4"
+                  className="text-muted-foreground text-sm underline underline-offset-4 text-nowrap"
                   href="https://venturecamp.org"
                   target="_blank"
                 >
@@ -157,7 +157,7 @@ export default function Home() {
 
               <div className="flex flex-row sm:flex-col justify-between sm:justify-normal items-center gap-1 sm:items-end mb-4 sm:mb-0">
                 <LinkPreview
-                  className="font-semibold text-primary underline underline-offset-4 leading-7"
+                  className="font-semibold text-primary underline underline-offset-4 leading-7 text-nowrap"
                   url="https://github.com/notken12/mangochat"
                 >
                   MangoChat
@@ -166,9 +166,9 @@ export default function Home() {
               </div>
               <p className="leading-7 mb-6 sm:mb-0 sm:ml-4">
                 Chat and send money securely using end-to-end encryption and
-                decentralized storage.
+                decentralized storage.&nbsp;
                 <a
-                  className="text-muted-foreground text-sm ml-1 underline underline-offset-4"
+                  className="text-muted-foreground text-sm underline underline-offset-4"
                   href="https://hacktj.org"
                   target="_blank"
                 >
