@@ -71,7 +71,7 @@ export default function Home() {
                         width={755}
                         height={429}
                         alt="Keyboard"
-                        className="aspect-[755/429] object-contain object-center shadow-md max-w-fit w-auto h-full rounded-b-md"
+                        className="aspect-[755/429] shadow-md max-w-fit w-full h-auto rounded-b-md"
                       />
                     </CardItem>
                     <CardItem
@@ -89,7 +89,7 @@ export default function Home() {
                         width={1757}
                         height={2002}
                         alt="Keyboard"
-                        className="aspect-[1757/2002] object-contain object-center shadow-md max-w-fit w-auto h-full rounded"
+                        className="aspect-[1757/2002]  shadow-md max-w-fit w-full h-auto rounded-b-md"
                       />
                       <p className="text-xs text-muted-foreground font-handwriting leading-none mt-1 mb-[-0.25rem]">
                         USB Station
