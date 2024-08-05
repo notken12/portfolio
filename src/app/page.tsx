@@ -102,14 +102,14 @@ export default function Home() {
                       width={1027}
                       height={352}
                       alt="Keyboard"
-                      className="aspect-[1027/352] h-10 sm:h-14 rounded object-contain object-center shadow-md max-w-fit dark:hidden w-auto"
+                      className="aspect-[1027/352] h-10 sm:h-14  object-contain object-center shadow-md max-w-fit dark:hidden w-auto"
                     />
                     <Image
                       src="/keyboard-dark.svg"
                       width={1027}
                       height={352}
                       alt="Keyboard"
-                      className="aspect-[1027/352] h-10 sm:h-14 rounded object-contain object-center shadow-md max-w-fit hidden dark:block w-auto"
+                      className="aspect-[1027/352] h-10 sm:h-14  object-contain object-center shadow-md max-w-fit hidden dark:block w-auto"
                     />
                     <Image
                       src="/pen.svg"
