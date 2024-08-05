@@ -87,6 +87,9 @@ const config = {
         mono: ["var(--font-geist-mono)"],
         handwriting: ["Virgil"],
       },
+      contrast: {
+        90: ".9",
+      },
     },
   },
   plugins: [

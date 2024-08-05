@@ -14,7 +14,7 @@ import { LinkPreview } from "@/components/ui/link-preview";
 import { BackgroundGradient } from "@/components/ui/background-gradient";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, MapPinned } from "lucide-react";
+import { Github, Linkedin, MapPin, MapPinned } from "lucide-react";
 import { ModeToggle } from "@/components/mode-toggle";
 import NeuralLabWebp from "@/images/neurallab.webp";
 import NeuralLabDarkWebp from "@/images/neurallab-dark.webp";
@@ -23,6 +23,8 @@ import PenDarkSvg from "@/images/pen-dark.svg";
 import KeyboardSvg from "@/images/keyboard.svg";
 import KeyboardDarkSvg from "@/images/keyboard-dark.svg";
 import UsbStationWebp from "@/images/usbstation.webp";
+import GithubIconSvg from "@/images/github-mark.svg";
+import LinkedinSvg from "@/images/linkedin.svg";
 
 export default function Home() {
   return (
@@ -264,6 +266,36 @@ export default function Home() {
                   Congressional App Challenge
                 </a>
               </p>
+            </div>
+          </section>
+          <section className="w-full flex flex-col items-start">
+            <div className="flex gap-4 justify-end flex-row w-full items-center">
+              <hr className="flex-grow"></hr>
+              <a href="https://github.com/notken12" target="_blank">
+                <Image
+                  src={GithubIconSvg}
+                  alt="Github"
+                  className="w-6 h-6 contrast-50 dark:invert dark:contrast-100"
+                />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/ken-zhou-8013bb242/"
+                target="_blank"
+              >
+                <Image
+                  src={LinkedinSvg}
+                  alt="LinkedIn"
+                  className="w-6 h-6 block dark:hidden rounded filter contrast-[.3]"
+                />
+                <Image
+                  src={LinkedinSvg}
+                  alt="LinkedIn"
+                  className="w-6 h-6 hidden dark:block rounded"
+                  style={{
+                    filter: "invert(100%) brightness(88%) contrast(90%)",
+                  }}
+                />
+              </a>
             </div>
           </section>
         </div>
