@@ -16,6 +16,13 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, MapPinned } from "lucide-react";
 import { ModeToggle } from "@/components/mode-toggle";
+import NeuralLabWebp from "@/images/neurallab.webp";
+import NeuralLabDarkWebp from "@/images/neurallab-dark.webp";
+import PenSvg from "@/images/pen.svg";
+import PenDarkSvg from "@/images/pen-dark.svg";
+import KeyboardSvg from "@/images/keyboard.svg";
+import KeyboardDarkSvg from "@/images/keyboard-dark.svg";
+import UsbStationWebp from "@/images/usbstation.webp";
 
 export default function Home() {
   return (
@@ -67,18 +74,14 @@ export default function Home() {
                         </p>
                       </div>
                       <Image
-                        src="/neurallab.webp"
-                        width={736}
-                        height={436}
+                        src={NeuralLabWebp}
                         alt="Keyboard"
-                        className="aspect-[736/436] shadow-md max-w-fit w-full h-auto rounded-b-md dark:hidden"
+                        className="shadow-md max-w-fit w-full h-auto rounded-b-md dark:hidden"
                       />
                       <Image
-                        src="/neurallab-dark.webp"
-                        width={736}
-                        height={436}
+                        src={NeuralLabDarkWebp}
                         alt="Keyboard"
-                        className="aspect-[736/436] shadow-md max-w-fit w-full h-auto rounded-b-md hidden dark:block"
+                        className="shadow-md max-w-fit w-full h-auto rounded-b-md hidden dark:block"
                       />
                     </CardItem>
                     <CardItem
@@ -92,11 +95,9 @@ export default function Home() {
                         <div className="bg-green-500 rounded-full w-2 h-2"></div>
                       </div> */}
                       <Image
-                        src="/usbstation.jpg"
-                        width={1757}
-                        height={2002}
+                        src={UsbStationWebp}
                         alt="Keyboard"
-                        className="aspect-[1757/2002]  shadow-md max-w-fit w-full h-auto rounded-b-md"
+                        className="shadow-md max-w-fit w-full h-auto rounded-b-md"
                       />
                       <p className="text-xs text-muted-foreground font-handwriting leading-none mt-1 mb-[-0.25rem]">
                         USB Station
@@ -105,32 +106,24 @@ export default function Home() {
                   </div>
                   <div className="flex flex-row gap-7 justify-center items-center">
                     <Image
-                      src="/keyboard.svg"
-                      width={1027}
-                      height={352}
+                      src={KeyboardSvg}
                       alt="Keyboard"
-                      className="aspect-[1027/352] h-10 sm:h-14  object-contain object-center shadow-md max-w-fit dark:hidden w-auto"
+                      className="h-10 sm:h-14  object-contain object-center shadow-md max-w-fit dark:hidden w-auto"
                     />
                     <Image
-                      src="/keyboard-dark.svg"
-                      width={1027}
-                      height={352}
+                      src={KeyboardDarkSvg}
                       alt="Keyboard"
-                      className="aspect-[1027/352] h-10 sm:h-14  object-contain object-center shadow-md max-w-fit hidden dark:block w-auto"
+                      className="h-10 sm:h-14  object-contain object-center shadow-md max-w-fit hidden dark:block w-auto"
                     />
                     <Image
-                      src="/pen.svg"
-                      width={64}
-                      height={606}
+                      src={PenSvg}
                       alt="Pen"
-                      className="aspect-[64/606] h-12 sm:h-16 object-contain object-center max-w-fit dark:hidden w-auto"
+                      className="h-12 sm:h-16 object-contain object-center max-w-fit dark:hidden w-auto"
                     />
                     <Image
-                      src="/pen-dark.svg"
-                      width={64}
-                      height={606}
+                      src={PenDarkSvg}
                       alt="Pen"
-                      className="aspect-[64/606] h-12 sm:h-16 object-contain object-center max-w-fit hidden dark:block w-auto"
+                      className="h-12 sm:h-16 object-contain object-center max-w-fit hidden dark:block w-auto"
                     />
                   </div>
                 </div>
