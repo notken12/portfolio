@@ -64,6 +64,7 @@ export default function Home() {
                       rotateZ={-6}
                       translateZ={30}
                       href="https://neurallab.vercel.app"
+                      target="_blank"
                     >
                       <div className="flex justify-start p-1 gap-[0.2rem] h-4 items-center relative">
                         <div className="bg-red-500 rounded-full w-2 h-2"></div>
@@ -240,6 +241,27 @@ export default function Home() {
                 >
                   <MapPin className="w-4 h-4 inline-flex align-text-top mx-1" />
                   HackTJ 9.0
+                </a>
+              </p>
+
+              <div className="flex flex-row sm:flex-col justify-between sm:justify-normal items-center gap-1 sm:items-end mb-4 sm:mb-0">
+                <LinkPreview
+                  className="font-semibold text-primary underline underline-offset-4 leading-7 text-nowrap"
+                  url="https://mypantry-notken12.vercel.app/"
+                >
+                  MyPantry
+                </LinkPreview>
+              </div>
+              <p className="leading-7 mb-6 sm:mb-0 sm:ml-4">
+                Discover and run pantries. See available goods and donate/check
+                out items.&nbsp;
+                <a
+                  className="text-muted-foreground text-sm underline underline-offset-4"
+                  href="https://www.congressionalappchallenge.us/"
+                  target="_blank"
+                >
+                  <MapPin className="w-4 h-4 inline-flex align-text-top mx-1" />
+                  Congressional App Challenge
                 </a>
               </p>
             </div>

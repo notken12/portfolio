@@ -1,4 +1,0 @@
-[ZoneTransfer]
-ZoneId=3
-ReferrerUrl=https://cloudconvert.com/
-HostUrl=https://us-east.storage.cloudconvert.com/tasks/97b420c1-dc53-46d6-be82-c70471684708/usbstation.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cloudconvert-production%2F20240805%2Fva%2Fs3%2Faws4_request&X-Amz-Date=20240805T012104Z&X-Amz-Expires=86400&X-Amz-Signature=24506bac471d055a4efc71092c23cc1b5db175cec0e7283346777dcecd0cdb56&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3D%22usbstation.webp%22&response-content-type=image%2Fwebp&x-id=GetObject
