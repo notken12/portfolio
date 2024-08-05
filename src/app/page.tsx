@@ -67,11 +67,18 @@ export default function Home() {
                         </p>
                       </div>
                       <Image
-                        src="/neurallab.png"
-                        width={755}
-                        height={429}
+                        src="/neurallab.webp"
+                        width={736}
+                        height={436}
                         alt="Keyboard"
-                        className="aspect-[755/429] shadow-md max-w-fit w-full h-auto rounded-b-md"
+                        className="aspect-[736/436] shadow-md max-w-fit w-full h-auto rounded-b-md dark:hidden"
+                      />
+                      <Image
+                        src="/neurallab-dark.webp"
+                        width={736}
+                        height={436}
+                        alt="Keyboard"
+                        className="aspect-[736/436] shadow-md max-w-fit w-full h-auto rounded-b-md hidden dark:block"
                       />
                     </CardItem>
                     <CardItem
