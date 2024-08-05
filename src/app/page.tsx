@@ -269,7 +269,7 @@ export default function Home() {
             </div>
           </section>
           <section className="w-full flex flex-col items-start">
-            <div className="flex gap-4 justify-end flex-row w-full items-center">
+            <div className="flex gap-4 justify-end flex-row w-full items-center mt-7">
               <hr className="flex-grow"></hr>
               <a href="https://github.com/notken12" target="_blank">
                 <Image
@@ -296,6 +296,7 @@ export default function Home() {
                   }}
                 />
               </a>
+              <hr className="flex-grow"></hr>
             </div>
           </section>
         </div>
