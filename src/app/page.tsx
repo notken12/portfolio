@@ -79,12 +79,12 @@ export default function Home() {
                       <Image
                         src={NeuralLabWebp}
                         alt="Keyboard"
-                        className="shadow-md max-w-fit w-full h-auto rounded-b-md dark:hidden"
+                        className="shadow-md w-full h-auto rounded-b-md dark:hidden"
                       />
                       <Image
                         src={NeuralLabDarkWebp}
                         alt="Keyboard"
-                        className="shadow-md max-w-fit w-full h-auto rounded-b-md hidden dark:block"
+                        className="shadow-md w-full h-auto rounded-b-md hidden dark:block"
                       />
                     </CardItem>
                     <CardItem
@@ -100,7 +100,7 @@ export default function Home() {
                       <Image
                         src={UsbStationWebp}
                         alt="Keyboard"
-                        className="shadow-md max-w-fit w-full h-auto rounded-b-md"
+                        className="shadow-md w-full h-auto rounded-b-md"
                       />
                       <p className="text-xs text-muted-foreground font-handwriting leading-none mt-1 mb-[-0.25rem]">
                         USB Station
