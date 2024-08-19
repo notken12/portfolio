@@ -9,8 +9,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
   title: "Ken Zhou",
-  description:
-    "I'm a high school senior in Northern Virginia. I love my dog Mango and building cool apps.",
+  description: "I'm a 17 year old full stack developer who loves my dog Mango.",
 };
 
 export default function RootLayout({
