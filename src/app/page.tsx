@@ -14,7 +14,7 @@ import { LinkPreview } from "@/components/ui/link-preview";
 import { BackgroundGradient } from "@/components/ui/background-gradient";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { Github, Linkedin, MapPin, MapPinned } from "lucide-react";
+import { Code, Github, Linkedin, MapPin, MapPinned } from "lucide-react";
 import { ModeToggle } from "@/components/mode-toggle";
 import NeuralLabWebp from "@/images/neurallab.webp";
 import NeuralLabDarkWebp from "@/images/neurallab-dark.webp";
@@ -149,8 +149,8 @@ export default function Home() {
                 <Badge variant={"default"}>🏆 Top.gg Staff Pick</Badge>
               </div>
               <p className="leading-7 mb-6 sm:mb-0 sm:ml-4">
-                The GamePigeon of Discord. Play fun minigames with friends in
-                your online communities. Used in&nbsp;
+                The GamePigeon of Discord. Play minigames like 8-ball and chess
+                with friends in your online communities. Used in&nbsp;
                 <span className="font-mono font-semibold">2600+</span> servers.
               </p>
 
@@ -269,34 +269,53 @@ export default function Home() {
             </div>
           </section>
           <section className="w-full flex flex-col items-start">
-            <div className="flex gap-4 justify-end flex-row w-full items-center mt-7">
+            <div className="flex gap-4 flex-row w-full items-center mt-7 flex-wrap">
+              <p className="text-sm text-muted-foreground">
+                Portfolio designed by{" "}
+                <a
+                  href="https://github.com/notken12"
+                  target="_blank"
+                  className="underline underline-offset-4"
+                >
+                  Ken Zhou
+                </a>
+                .&nbsp;&nbsp;
+                <a
+                  href="https://github.com/notken12/portfolio"
+                  target="_blank"
+                  className="underline underline-offset-4"
+                >
+                  Source
+                </a>
+              </p>
               <hr className="flex-grow"></hr>
-              <a href="https://github.com/notken12" target="_blank">
-                <Image
-                  src={GithubIconSvg}
-                  alt="Github"
-                  className="w-6 h-6 contrast-50 dark:invert dark:contrast-100"
-                />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/ken-zhou-8013bb242/"
-                target="_blank"
-              >
-                <Image
-                  src={LinkedinSvg}
-                  alt="LinkedIn"
-                  className="w-6 h-6 block dark:hidden rounded filter contrast-[.3]"
-                />
-                <Image
-                  src={LinkedinSvg}
-                  alt="LinkedIn"
-                  className="w-6 h-6 hidden dark:block rounded"
-                  style={{
-                    filter: "invert(100%) brightness(88%) contrast(90%)",
-                  }}
-                />
-              </a>
-              <hr className="flex-grow"></hr>
+              <div className="flex gap-4">
+                <a href="https://github.com/notken12" target="_blank">
+                  <Image
+                    src={GithubIconSvg}
+                    alt="Github"
+                    className="w-6 h-6 contrast-50 dark:invert dark:contrast-100"
+                  />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/ken-zhou-8013bb242/"
+                  target="_blank"
+                >
+                  <Image
+                    src={LinkedinSvg}
+                    alt="LinkedIn"
+                    className="w-6 h-6 block dark:hidden rounded filter contrast-[.3]"
+                  />
+                  <Image
+                    src={LinkedinSvg}
+                    alt="LinkedIn"
+                    className="w-6 h-6 hidden dark:block rounded"
+                    style={{
+                      filter: "invert(100%) brightness(88%) contrast(90%)",
+                    }}
+                  />
+                </a>
+              </div>
             </div>
           </section>
         </div>

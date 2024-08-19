@@ -1,8 +1,10 @@
 # Ken's Portfolio - https://kenzhou.link
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Portfolio website showcasing my projects. Website UI and decorative images (keyboard, pen) are designed by myself. Built using [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com), [shadcn/ui](https://ui.shadcn.com/), and [Aceternity UI](https://ui.aceternity.com/).
 
-## Getting Started
+You are welcome to make a copy of my portfolio to adapt for yourself but keep the attribution on the bottom or acknowledge me in some way.
+
+## Run Locally for Development
 
 First, run the development server:
 
