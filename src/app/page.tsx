@@ -14,7 +14,7 @@ import { LinkPreview } from "@/components/ui/link-preview";
 import { BackgroundGradient } from "@/components/ui/background-gradient";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { Code, Github, Linkedin, MapPin, MapPinned } from "lucide-react";
+import { Code, Github, Linkedin, MapPin, MapPinned, Mail } from "lucide-react";
 import { ModeToggle } from "@/components/mode-toggle";
 import NeuralLabWebp from "@/images/neurallab.webp";
 import NeuralLabDarkWebp from "@/images/neurallab-dark.webp";
@@ -266,6 +266,22 @@ export default function Home() {
                   Congressional App Challenge
                 </a>
               </p>
+            </div>
+          </section>
+          <section className="w-full flex flex-col items-center">
+            {/* <h2 className="scroll-m-20 text-muted-foreground font-semibold tracking-tight flex gap-4 items-center">
+              Contact me
+            </h2> */}
+            <div className="grid grid-cols-1 sm:grid-cols-[auto_1fr] sm:gap-y-6 mt-6">
+              <div className="flex flex-row gap-4 items-center">
+                <Mail />
+                <a
+                  href="mailto:kendotzhou@gmail.com"
+                  className=" underline underline-offset-4 mb-[0.1rem]"
+                >
+                  Contact me
+                </a>
+              </div>
             </div>
           </section>
           <section className="w-full flex flex-col items-start">
