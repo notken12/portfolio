@@ -146,7 +146,14 @@ export default function Home() {
                 >
                   Arcadecord
                 </LinkPreview>
-                <Badge variant={"default"}>🏆 Top.gg Staff Pick</Badge>
+                <Badge variant={"default"}>
+                  <a
+                    href="https://top.gg/bot/939355142556373043#:~:text=Awarded%20Top.gg%20Staff%20Pick"
+                    target="_blank"
+                  >
+                    🏆 Top.gg Staff Pick
+                  </a>
+                </Badge>
               </div>
               <p className="leading-7 mb-6 sm:mb-0 sm:ml-4">
                 The GamePigeon of Discord. Play minigames like 8-ball and chess
@@ -183,7 +190,14 @@ export default function Home() {
                 >
                   MachinistMath
                 </LinkPreview>
-                <Badge variant={"default"}>🏆 Best Technical Venture</Badge>
+                <Badge variant={"default"}>
+                  <a
+                    href="https://youtu.be/ON7P5-9bsa4?si=07h1pzzJWax6ox_5&t=263"
+                    target="_blank"
+                  >
+                    🏆 Best Product Innovation
+                  </a>
+                </Badge>
               </div>
               <p className="leading-7 mb-6 sm:mb-0 sm:ml-4">
                 Simplify tedious and error prone machining calculations with
@@ -231,7 +245,14 @@ export default function Home() {
                 >
                   MangoChat
                 </LinkPreview>
-                <Badge variant={"default"}>🏆 Best Overall Hack</Badge>
+                <Badge variant={"default"}>
+                  <a
+                    href="https://devpost.com/software/mango-chat"
+                    target="_blank"
+                  >
+                    🏆 Best Overall Hack
+                  </a>
+                </Badge>
               </div>
               <p className="leading-7 mb-6 sm:mb-0 sm:ml-4">
                 Chat and send money securely using end-to-end encryption and
