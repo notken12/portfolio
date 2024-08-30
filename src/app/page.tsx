@@ -178,7 +178,7 @@ export default function Home() {
                   href="https://hacktj.org"
                   target="_blank"
                 >
-                  <MapPin className="w-4 h-4 inline-flex align-text-top mx-1" />
+                  <MapPin className="w-4 h-4 inline-flex align-text-top mr-1" />
                   HackTJ 11.0
                 </a>
               </p>
@@ -207,7 +207,7 @@ export default function Home() {
                   href="https://venturecamp.org"
                   target="_blank"
                 >
-                  <MapPin className="w-4 h-4 inline-flex align-text-top mx-1" />
+                  <MapPin className="w-4 h-4 inline-flex align-text-top mr-1" />
                   Venture Camp S24
                 </a>
               </p>
@@ -236,6 +236,14 @@ export default function Home() {
               </div>
               <p className="leading-7 mb-6 sm:mb-0 sm:ml-4">
                 Scan medicine to check for dangerous drug interactions.
+                <a
+                  className="text-muted-foreground text-sm underline underline-offset-4 text-nowrap"
+                  href="https://www.hackthenest.org/"
+                  target="_blank"
+                >
+                  <MapPin className="w-4 h-4 inline-flex align-text-top mr-1" />
+                  Hack the Nest
+                </a>
               </p>
 
               <div className="flex flex-row sm:flex-col justify-between sm:justify-normal items-center gap-1 sm:items-end mb-4 sm:mb-0">
@@ -258,11 +266,11 @@ export default function Home() {
                 Chat and send money securely using end-to-end encryption and
                 decentralized storage.&nbsp;
                 <a
-                  className="text-muted-foreground text-sm underline underline-offset-4"
+                  className="text-muted-foreground text-sm underline underline-offset-4 text-nowrap"
                   href="https://hacktj.org"
                   target="_blank"
                 >
-                  <MapPin className="w-4 h-4 inline-flex align-text-top mx-1" />
+                  <MapPin className="w-4 h-4 inline-flex align-text-top mr-1" />
                   HackTJ 9.0
                 </a>
               </p>
@@ -279,11 +287,11 @@ export default function Home() {
                 Discover and run pantries. See available goods and donate/check
                 out items.&nbsp;
                 <a
-                  className="text-muted-foreground text-sm underline underline-offset-4"
+                  className="text-muted-foreground text-sm underline underline-offset-4 text-nowrap"
                   href="https://www.congressionalappchallenge.us/"
                   target="_blank"
                 >
-                  <MapPin className="w-4 h-4 inline-flex align-text-top mx-1" />
+                  <MapPin className="w-4 h-4 inline-flex align-text-top mr-1" />
                   Congressional App Challenge
                 </a>
               </p>
