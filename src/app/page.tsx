@@ -156,9 +156,9 @@ export default function Home() {
                 </Badge>
               </div>
               <p className="leading-7 mb-6 sm:mb-0 sm:ml-4">
-                The GamePigeon of Discord. Play minigames like 8-ball and chess
-                with friends in your online communities. Used in&nbsp;
-                <span className="font-mono font-semibold">2600+</span> servers.
+                Minigames platform for the Discord chat app, including Chess,
+                Eight Ball Pool, and more. Used in&nbsp;
+                <span className="font-mono font-semibold">2800+</span> servers.
               </p>
 
               <div className="flex flex-row sm:flex-col justify-between sm:justify-normal items-center gap-1 sm:items-end mb-4 sm:mb-0">
@@ -172,7 +172,8 @@ export default function Home() {
               </div>
 
               <p className="leading-7 mb-6 sm:mb-0 sm:ml-4">
-                Add reminders from documents into your calendar.&nbsp;
+                Add reminders, agendas, and events from documents into your
+                calendar automatically using AI.&nbsp;
                 <a
                   className="text-muted-foreground text-sm underline underline-offset-4 text-nowrap"
                   href="https://hacktj.org"
@@ -221,8 +222,9 @@ export default function Home() {
                 </LinkPreview>
               </div>
               <p className="leading-7 mb-6 sm:mb-0 sm:ml-4">
-                Automatically add license headers to source code.&nbsp;
-                <span className="font-mono font-semibold">6000+</span>
+                Automatically add license headers to source code with just one
+                command.&nbsp;
+                <span className="font-mono font-semibold">7000+</span>
                 &nbsp;downloads.
               </p>
 
@@ -236,6 +238,7 @@ export default function Home() {
               </div>
               <p className="leading-7 mb-6 sm:mb-0 sm:ml-4">
                 Scan medicine to check for dangerous drug interactions.
+                Developed with computer vision and medical databases.&nbsp;
                 <a
                   className="text-muted-foreground text-sm underline underline-offset-4 text-nowrap"
                   href="https://www.hackthenest.org/"
@@ -264,7 +267,7 @@ export default function Home() {
               </div>
               <p className="leading-7 mb-6 sm:mb-0 sm:ml-4">
                 Chat and send money securely using end-to-end encryption and
-                decentralized storage.&nbsp;
+                decentralized storage & currency.&nbsp;
                 <a
                   className="text-muted-foreground text-sm underline underline-offset-4 text-nowrap"
                   href="https://hacktj.org"
@@ -284,8 +287,8 @@ export default function Home() {
                 </LinkPreview>
               </div>
               <p className="leading-7 mb-6 sm:mb-0 sm:ml-4">
-                Discover and run pantries. See available goods and donate/check
-                out items.&nbsp;
+                Discover and run pantries. Track available goods and
+                donate/check out items.&nbsp;
                 <a
                   className="text-muted-foreground text-sm underline underline-offset-4 text-nowrap"
                   href="https://www.congressionalappchallenge.us/"
@@ -316,7 +319,7 @@ export default function Home() {
           <section className="w-full flex flex-col items-start">
             <div className="flex gap-4 flex-row w-full items-center mt-7 flex-wrap">
               <p className="text-sm text-muted-foreground">
-                Portfolio designed by{" "}
+                Portfolio design by{" "}
                 <a
                   href="https://github.com/notken12"
                   target="_blank"
@@ -324,7 +327,7 @@ export default function Home() {
                 >
                   Ken Zhou
                 </a>
-                .&nbsp;&nbsp;
+                .&nbsp;Use with attribution is welcome.&nbsp;
                 <a
                   href="https://github.com/notken12/portfolio"
                   target="_blank"
