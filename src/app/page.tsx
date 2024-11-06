@@ -78,12 +78,14 @@ export default function Home() {
                       </div>
                       <Image
                         src={NeuralLabWebp}
-                        alt="Keyboard"
+                        alt="NeuralLab UI"
+                        fetchPriority="high"
                         className="shadow-md w-full h-auto rounded-b-md dark:hidden"
                       />
                       <Image
                         src={NeuralLabDarkWebp}
-                        alt="Keyboard"
+                        alt="NeuralLab UI"
+                        fetchPriority="high"
                         className="shadow-md w-full h-auto rounded-b-md hidden dark:block"
                       />
                     </CardItem>
@@ -99,7 +101,8 @@ export default function Home() {
                       </div> */}
                       <Image
                         src={UsbStationWebp}
-                        alt="Keyboard"
+                        alt="USB Charging Station"
+                        fetchPriority="high"
                         className="shadow-md w-full h-auto rounded-b-md"
                       />
                       <p className="text-xs text-muted-foreground font-handwriting leading-none mt-1 mb-[-0.25rem]">
