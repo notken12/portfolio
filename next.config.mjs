@@ -14,6 +14,9 @@ const nextConfig = {
     ],
     formats: ["image/webp"],
   },
+  experimental: {
+    optimizeCss: true,
+  },
   // webpack: (
   //   config,
   //   { buildId, dev, isServer, defaultLoaders, nextRuntime, webpack }
