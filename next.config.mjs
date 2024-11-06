@@ -14,6 +14,16 @@ const nextConfig = {
     ],
     formats: ["image/webp"],
   },
+  // webpack: (
+  //   config,
+  //   { buildId, dev, isServer, defaultLoaders, nextRuntime, webpack }
+  // ) => {
+  //   // Important: return the modified config
+  //   config.module.rules.push({
+  //     test: ''
+  //   })
+  //   return config;
+  // },
 };
 
 export default nextConfig;
