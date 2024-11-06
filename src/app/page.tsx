@@ -114,21 +114,25 @@ export default function Home() {
                     <Image
                       src={KeyboardSvg}
                       alt="Keyboard"
+                      fetchPriority="high"
                       className="h-10 sm:h-14  object-contain object-center shadow-md max-w-fit dark:hidden w-auto"
                     />
                     <Image
                       src={KeyboardDarkSvg}
                       alt="Keyboard"
+                      fetchPriority="high"
                       className="h-10 sm:h-14  object-contain object-center shadow-md max-w-fit hidden dark:block w-auto"
                     />
                     <Image
                       src={PenSvg}
                       alt="Pen"
+                      fetchPriority="high"
                       className="h-12 sm:h-16 object-contain object-center max-w-fit dark:hidden w-auto"
                     />
                     <Image
                       src={PenDarkSvg}
                       alt="Pen"
+                      fetchPriority="high"
                       className="h-12 sm:h-16 object-contain object-center max-w-fit hidden dark:block w-auto"
                     />
                   </div>
