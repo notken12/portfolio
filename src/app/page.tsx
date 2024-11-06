@@ -40,7 +40,7 @@ export default function Home() {
             </div>
 
             <p className="leading-7 [&:not(:first-child)]:mt-3">
-              I'm a 17 year old full-stack developer who loves my dog Mango.
+              I'm a 18 year old full-stack developer who loves my dog Mango.
             </p>
           </section>
 
