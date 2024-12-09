@@ -165,7 +165,7 @@ export default function Home() {
               <p className="leading-7 mb-6 sm:mb-0 sm:ml-4">
                 Minigames platform for the Discord chat app, including Chess,
                 Eight Ball Pool, and more. Used in&nbsp;
-                <span className="font-mono font-semibold">2900+</span>{" "}
+                <span className="font-mono font-semibold">3000+</span>{" "}
                 communities.
               </p>
 
@@ -232,7 +232,7 @@ export default function Home() {
               <p className="leading-7 mb-6 sm:mb-0 sm:ml-4">
                 Automatically add license headers to source code with just one
                 command.&nbsp;
-                <span className="font-mono font-semibold">8000+</span>
+                <span className="font-mono font-semibold">10000+</span>
                 &nbsp;downloads.
               </p>
 
