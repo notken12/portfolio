@@ -16,15 +16,6 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Code, Github, Linkedin, MapPin, MapPinned, Mail } from "lucide-react";
 import { ModeToggle } from "@/components/mode-toggle";
-import NeuralLabWebp from "@/images/neurallab.webp";
-import NeuralLabDarkWebp from "@/images/neurallab-dark.webp";
-import PenSvg from "@/images/pen.svg";
-import PenDarkSvg from "@/images/pen-dark.svg";
-import KeyboardSvg from "@/images/keyboard.svg";
-import KeyboardDarkSvg from "@/images/keyboard-dark.svg";
-import UsbStationWebp from "@/images/usbstation.webp";
-import GithubIconSvg from "@/images/github-mark.svg";
-import LinkedinSvg from "@/images/linkedin.svg";
 
 export default function Home() {
   return (
@@ -76,14 +67,14 @@ export default function Home() {
                           NeuralLab
                         </p>
                       </div>
-                      <Image
-                        src={NeuralLabWebp}
+                      <img
+                        src="/images/neurallab.webp"
                         alt="NeuralLab UI"
                         fetchPriority="high"
                         className="shadow-md w-full h-auto rounded-b-md dark:hidden"
                       />
-                      <Image
-                        src={NeuralLabDarkWebp}
+                      <img
+                        src="/images/neurallab-dark.webp"
                         alt="NeuralLab UI"
                         fetchPriority="high"
                         className="shadow-md w-full h-auto rounded-b-md hidden dark:block"
@@ -99,8 +90,8 @@ export default function Home() {
                         <div className="bg-yellow-500 rounded-full w-2 h-2"></div>
                         <div className="bg-green-500 rounded-full w-2 h-2"></div>
                       </div> */}
-                      <Image
-                        src={UsbStationWebp}
+                      <img
+                        src="/images/usbstation.webp"
                         alt="USB Charging Station"
                         fetchPriority="high"
                         className="shadow-md w-full h-auto rounded-b-md"
@@ -111,26 +102,26 @@ export default function Home() {
                     </CardItem>
                   </div>
                   <div className="flex flex-row gap-7 justify-center items-center">
-                    <Image
-                      src={KeyboardSvg}
+                    <img
+                      src="/images/keyboard.svg"
                       alt="Keyboard"
                       fetchPriority="high"
                       className="h-10 sm:h-14  object-contain object-center shadow-md max-w-fit dark:hidden w-auto"
                     />
-                    <Image
-                      src={KeyboardDarkSvg}
+                    <img
+                      src="/images/keyboard-dark.svg"
                       alt="Keyboard"
                       fetchPriority="high"
                       className="h-10 sm:h-14  object-contain object-center shadow-md max-w-fit hidden dark:block w-auto"
                     />
-                    <Image
-                      src={PenSvg}
+                    <img
+                      src="/images/pen.svg"
                       alt="Pen"
                       fetchPriority="high"
                       className="h-12 sm:h-16 object-contain object-center max-w-fit dark:hidden w-auto"
                     />
-                    <Image
-                      src={PenDarkSvg}
+                    <img
+                      src="/images/pen-dark.svg"
                       alt="Pen"
                       fetchPriority="high"
                       className="h-12 sm:h-16 object-contain object-center max-w-fit hidden dark:block w-auto"
@@ -347,8 +338,8 @@ export default function Home() {
               <hr className="flex-grow"></hr>
               <div className="flex gap-4">
                 <a href="https://github.com/notken12" target="_blank">
-                  <Image
-                    src={GithubIconSvg}
+                  <img
+                    src="/images/github-mark.svg"
                     alt="Github"
                     className="w-6 h-6 contrast-50 dark:invert dark:contrast-100"
                   />
@@ -357,13 +348,13 @@ export default function Home() {
                   href="https://www.linkedin.com/in/ken-zhou-8013bb242/"
                   target="_blank"
                 >
-                  <Image
-                    src={LinkedinSvg}
+                  <img
+                    src="/images/linkedin.svg"
                     alt="LinkedIn"
                     className="w-6 h-6 block dark:hidden rounded filter contrast-[.3]"
                   />
-                  <Image
-                    src={LinkedinSvg}
+                  <img
+                    src="/images/linkedin.svg"
                     alt="LinkedIn"
                     className="w-6 h-6 hidden dark:block rounded"
                     style={{
