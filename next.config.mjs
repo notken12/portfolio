@@ -14,6 +14,7 @@ const nextConfig = {
       "api.microlink.io", // Microlink Image Preview
     ],
     formats: ["image/webp"],
+    unoptimized: true
   },
   experimental: {
     optimizeCss: true,
