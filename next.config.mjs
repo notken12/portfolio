@@ -4,31 +4,21 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "https",
         hostname: "images.unsplash.com",
-        port: "",
-        pathname: "**",
       },
+      {
+        hostname: "res.cloudinary.com",
+      },
+      {
+        hostname: "api.microlink.io",
+      }
     ],
-    domains: [
-      "api.microlink.io", // Microlink Image Preview
-    ],
-    formats: ["image/webp"],
+    formats: ["image/webp", "image/avif"],
     unoptimized: true
   },
   experimental: {
     optimizeCss: true,
   },
-  // webpack: (
-  //   config,
-  //   { buildId, dev, isServer, defaultLoaders, nextRuntime, webpack }
-  // ) => {
-  //   // Important: return the modified config
-  //   config.module.rules.push({
-  //     test: ''
-  //   })
-  //   return config;
-  // },
 };
 
 export default nextConfig;
