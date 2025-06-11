@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     description: "A collection of photography by myself.",
 };
 
-export const getBase64 = async (src: ArrayBuffer, size: number) => {
+const getBase64 = async (src: ArrayBuffer, size: number) => {
     const { info, data } = await sharp(src)
         .resize(size)
         .blur()
@@ -47,8 +47,7 @@ async function getPhotos() {
 const cachedGetPhotos = unstable_cache(getPhotos)
 
 export default async function PhotographyPage() {
-    // const photos = await cachedGetPhotos()
-    const photos = await getPhotos()
+    const photos = await cachedGetPhotos()
     return (
         <div className="container mx-auto px-4 py-8">
             <h1 className="text-3xl font-bold mb-8 text-center">Photography</h1>
