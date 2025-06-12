@@ -87,13 +87,13 @@ export default async function PhotographyPage() {
                     No photos found. Check your Cloudinary configuration and tags.
                 </p>
             ) : (
-                <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4">
+                <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-2">
                     {photos.map((photo) => {
                         const photoId = photo.public_id.replace(/[^\w-]/g, '-');
                         return (
                             <div key={photo.public_id} className="group break-inside-avoid mb-4">
                                 <a href={`#${photoId}`}>
-                                    <div className="overflow-hidden outline outline-transparent hover:outline-border transition-colors">
+                                    <div className="p-2 border border-transparent hover:border-muted-foreground transition-colors duration-200">
                                         <Image
                                             src={getThumbUrl(photo.public_id)}
                                             alt={`Photo - ${photo.public_id}`}
@@ -103,27 +103,27 @@ export default async function PhotographyPage() {
                                             placeholder="blur"
                                             blurDataURL={photo.blurDataURL}
                                         />
+                                        {photo.metadata && (
+                                            <div className="mt-2 text-xs">
+                                                <div className="mb-1 flex flex-wrap gap-x-4 text-xs text-muted-foreground justify-between">
+                                                    <span>{photo.metadata.FocalLength}mm</span>
+                                                    <span>f/{photo.metadata.FNumber}</span>
+                                                    <span>1/{1 / photo.metadata.ExposureTime}s</span>
+                                                    <span>ISO {photo.metadata.ISO}</span>
+                                                    <span>{photo.metadata.ExposureCompensation === 0 ? "±" : ""}{photo.metadata.ExposureCompensation} EV</span>
+                                                </div>
+                                                <div className="flex gap-2 flex-wrap">
+                                                    <span className="font-semibold">{photo.metadata.Make} {photo.metadata.Model}</span>
+                                                    <span className="text-muted-foreground">{photo.metadata.LensModel}</span>
+                                                </div>
+                                            </div>
+                                        )}
                                     </div>
                                 </a>
-                                {photo.metadata && (
-                                    <div className="mt-2 text-xs">
-                                        <div className="mb-1 flex flex-wrap gap-x-4 text-xs text-muted-foreground justify-between">
-                                            <span>{photo.metadata.FocalLength}mm</span>
-                                            <span>f/{photo.metadata.FNumber}</span>
-                                            <span>1/{1 / photo.metadata.ExposureTime}s</span>
-                                            <span>ISO {photo.metadata.ISO}</span>
-                                            <span>{photo.metadata.ExposureCompensation === 0 ? "±" : ""}{photo.metadata.ExposureCompensation} EV</span>
-                                        </div>
-                                        <div className="flex gap-2 flex-wrap">
-                                            <span className="font-semibold">{photo.metadata.Make} {photo.metadata.Model}</span>
-                                            <span className="text-muted-foreground">{photo.metadata.LensModel}</span>
-                                        </div>
 
-                                    </div>
-                                )}
                                 <div id={photoId} className="fixed inset-0 z-50 hidden items-center justify-center bg-background/80 backdrop-blur-sm target:flex">
                                     <a href="#" className="absolute inset-0" aria-label="Close modal"></a>
-                                    <div className="relative z-10 flex h-full w-full items-center justify-center p-4 lg:p-8 pointer-events-none">
+                                    <div className="relative z-10 flex flex-col h-full w-full items-center justify-center p-4 lg:p-8 pointer-events-none">
                                         <div
                                             className="relative pointer-events-auto max-h-full max-w-full"
                                             style={{ aspectRatio: `${photo.width} / ${photo.height}` }}
@@ -137,6 +137,19 @@ export default async function PhotographyPage() {
                                                 placeholder="blur"
                                                 blurDataURL={photo.blurDataURL}
                                             />
+                                        </div>
+                                        <div className="mt-2 text-xs pointer-events-auto">
+                                            <div className="mb-1 flex flex-wrap gap-x-4 text-xs text-muted-foreground justify-between">
+                                                <span>{photo.metadata.FocalLength}mm</span>
+                                                <span>f/{photo.metadata.FNumber}</span>
+                                                <span>1/{1 / photo.metadata.ExposureTime}s</span>
+                                                <span>ISO {photo.metadata.ISO}</span>
+                                                <span>{photo.metadata.ExposureCompensation === 0 ? "±" : ""}{photo.metadata.ExposureCompensation} EV</span>
+                                            </div>
+                                            <div className="flex gap-2 flex-wrap">
+                                                <span className="font-semibold">{photo.metadata.Make} {photo.metadata.Model}</span>
+                                                <span className="text-muted-foreground">{photo.metadata.LensModel}</span>
+                                            </div>
                                         </div>
                                     </div>
                                     <a href="#" className="absolute top-4 right-4 z-20 transition-colors"><X /></a>
