@@ -70,7 +70,7 @@ export default async function PhotographyPage() {
     const photos = await cachedGetPhotos()
     return (
         <div className="container mx-auto px-4 py-8">
-            <Breadcrumb className="pb-8">
+            <Breadcrumb className="pb-8 px-2">
                 <BreadcrumbList>
                     <BreadcrumbItem>
                         <BreadcrumbLink href="/">Ken Zhou</BreadcrumbLink>
