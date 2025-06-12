@@ -11,8 +11,6 @@ import Image from "next/image";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import Link from "next/link";
 import { LinkPreview } from "@/components/ui/link-preview";
-import { BackgroundGradient } from "@/components/ui/background-gradient";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Code, Github, Linkedin, MapPin, MapPinned, Mail } from "lucide-react";
 import { ModeToggle } from "@/components/mode-toggle";

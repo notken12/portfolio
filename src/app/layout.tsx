@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${GeistSans.className} ${GeistMono.variable} bg-background dark:bg-neutral-800 lg:bg-neutral-350 lg:dark:bg-black`}
+        className={`${GeistSans.className} ${GeistMono.variable} bg-background`}
       >
         <ThemeProvider
           attribute="class"
