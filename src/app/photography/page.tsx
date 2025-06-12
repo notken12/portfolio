@@ -14,6 +14,10 @@ import {
 import { Aperture, X } from "lucide-react";
 import exifr from 'exifr'
 
+cloudinary.config({
+    secure: true,
+});
+
 export const metadata: Metadata = {
     title: "Photography",
     description: "A collection of photography by myself.",
@@ -29,7 +33,7 @@ const getBase64 = async (src: ArrayBuffer, size: number) => {
 };
 
 async function getBlurPreviewAndMetadata(public_id: string) {
-    const imageUrl = cloudinary.url(public_id, { transformation: [{ crop: 'thumb', width: 30 }] })
+    const imageUrl = cloudinary.url(public_id, { sdk_semver: '>=2.6.1', transformation: [{ crop: 'thumb', width: 30 }] })
     // fetch image content and convert to data url
     const response = await fetch(imageUrl);
     const arrayBuffer = await response.arrayBuffer();
@@ -40,9 +44,6 @@ async function getBlurPreviewAndMetadata(public_id: string) {
 async function getPhotos() {
     console.log('Refetching photos')
     try {
-        cloudinary.config({
-            secure: true,
-        });
         const res = await cloudinary.api.resources_by_tag('photography', { resource_type: 'image', tags: true })
         return Promise.all(res.resources.map(async resource => {
             const { blurDataURL, metadata } = await getBlurPreviewAndMetadata(resource.secure_url)
@@ -62,7 +63,7 @@ async function getPhotos() {
 const cachedGetPhotos = unstable_cache(getPhotos)
 
 const getThumbUrl = (public_id: string) => {
-    return cloudinary.url(public_id, { transformation: [{ crop: 'thumb', width: 1000 }, { quality: "auto:good", format: 'auto' }] })
+    return cloudinary.url(public_id, { sdk_semver: '>=2.6.1', transformation: [{ crop: 'thumb', width: 1000 }, { quality: "auto:good", format: 'auto' }] })
 }
 
 export default async function PhotographyPage() {
