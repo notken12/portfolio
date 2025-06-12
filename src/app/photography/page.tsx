@@ -67,7 +67,6 @@ const getThumbUrl = (public_id: string) => {
 
 export default async function PhotographyPage() {
     const photos = await cachedGetPhotos()
-    console.log(photos.map(p => p.metadata))
     return (
         <div className="container mx-auto px-4 py-8">
             <Breadcrumb className="pb-8">
