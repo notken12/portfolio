@@ -67,7 +67,7 @@ const getThumbUrl = (public_id: string) => {
 }
 
 export default async function PhotographyPage() {
-    const photos = await cachedGetPhotos()
+    const photos = await getPhotos()
     return (
         <div className="container mx-auto px-4 py-8">
             <Breadcrumb className="pb-8 px-2">
@@ -123,7 +123,7 @@ export default async function PhotographyPage() {
 
                                 <div id={photoId} className="fixed inset-0 z-50 hidden items-center justify-center bg-background/80 backdrop-blur-sm target:flex">
                                     <a href="#" className="absolute inset-0" aria-label="Close modal"></a>
-                                    <div className="relative z-10 flex flex-col h-full w-full items-center justify-center p-4 lg:p-8 pointer-events-none">
+                                    <div className="relative z-10 flex flex-col h-full w-full items-center justify-center px-4 py-16 pointer-events-none">
                                         <div
                                             className="relative pointer-events-auto max-h-full max-w-full"
                                             style={{ aspectRatio: `${photo.width} / ${photo.height}` }}
@@ -152,7 +152,7 @@ export default async function PhotographyPage() {
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="#" className="absolute top-4 right-4 z-20 transition-colors"><X /></a>
+                                    <a href="#" className="absolute top-4 right-4 z-20 transition-colors"><X className="size-4" /></a>
                                 </div>
                             </div>
                         )
