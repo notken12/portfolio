@@ -12,6 +12,7 @@ import {
     BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
 import { Aperture, X } from "lucide-react";
+import exifr from 'exifr'
 
 export const metadata: Metadata = {
     title: "Photography",
@@ -27,12 +28,13 @@ const getBase64 = async (src: ArrayBuffer, size: number) => {
     return `data:image/${info.format};base64,${data.toString('base64')}`;
 };
 
-async function getBlurPreviewDataUrl(public_id: string) {
+async function getBlurPreviewAndMetadata(public_id: string) {
     const imageUrl = cloudinary.url(public_id, { transformation: [{ crop: 'thumb', width: 30 }] })
     // fetch image content and convert to data url
     const response = await fetch(imageUrl);
     const arrayBuffer = await response.arrayBuffer();
-    return getBase64(arrayBuffer, 8)
+    const metadata = await exifr.parse(Buffer.from(arrayBuffer))
+    return { blurDataURL: await getBase64(arrayBuffer, 8), metadata }
 }
 
 async function getPhotos() {
@@ -42,12 +44,15 @@ async function getPhotos() {
             secure: true,
         });
         const res = await cloudinary.api.resources_by_tag('photography', { resource_type: 'image', tags: true })
-        return Promise.all(res.resources.map(async resource => ({
-            ...resource,
-            tags: resource.tags.filter(t => t !== 'photography'),
-            blurDataURL: await getBlurPreviewDataUrl(resource.secure_url),
-            metadata: (await cloudinary.api.resource(resource.public_id, { media_metadata: true })).media_metadata
-        })));
+        return Promise.all(res.resources.map(async resource => {
+            const { blurDataURL, metadata } = await getBlurPreviewAndMetadata(resource.secure_url)
+            return {
+                ...resource,
+                tags: resource.tags.filter(t => t !== 'photography'),
+                blurDataURL,
+                metadata
+            }
+        }));
     } catch (error) {
         console.error("Error fetching photos from Cloudinary:", error);
         return [];
@@ -62,7 +67,7 @@ const getThumbUrl = (public_id: string) => {
 
 export default async function PhotographyPage() {
     const photos = await cachedGetPhotos()
-    console.log(photos.map(p => p))
+    console.log(photos.map(p => p.metadata))
     return (
         <div className="container mx-auto px-4 py-8">
             <Breadcrumb className="pb-8">
@@ -103,11 +108,11 @@ export default async function PhotographyPage() {
                                 {photo.metadata && (
                                     <div className="mt-2 text-xs">
                                         <div className="mb-1 flex flex-wrap gap-x-4 text-xs text-muted-foreground justify-between">
-                                            <span>{photo.metadata.FocalLength}</span>
+                                            <span>{photo.metadata.FocalLength}mm</span>
                                             <span>f/{photo.metadata.FNumber}</span>
-                                            <span>{photo.metadata.ExposureTime}s</span>
+                                            <span>1/{1 / photo.metadata.ExposureTime}s</span>
                                             <span>ISO {photo.metadata.ISO}</span>
-                                            <span>{Number(photo.metadata.ExposureCompensation) === 0 ? "±" : ""}{photo.metadata.ExposureCompensation} EV</span>
+                                            <span>{photo.metadata.ExposureCompensation === 0 ? "±" : ""}{photo.metadata.ExposureCompensation} EV</span>
                                         </div>
                                         <div className="flex gap-2 flex-wrap">
                                             <span className="font-semibold">{photo.metadata.Make} {photo.metadata.Model}</span>
