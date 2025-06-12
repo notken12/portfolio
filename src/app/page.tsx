@@ -12,7 +12,7 @@ import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import Link from "next/link";
 import { LinkPreview } from "@/components/ui/link-preview";
 import { Badge } from "@/components/ui/badge";
-import { Code, Github, Linkedin, MapPin, MapPinned, Mail } from "lucide-react";
+import { Code, Github, Linkedin, MapPin, MapPinned, Mail, Aperture } from "lucide-react";
 import { ModeToggle } from "@/components/mode-toggle";
 
 export default function Home() {
@@ -359,6 +359,9 @@ export default function Home() {
                       filter: "invert(100%) brightness(88%) contrast(90%)",
                     }}
                   />
+                </a>
+                <a href="/photography">
+                  <Aperture className="w-6 h-6" />
                 </a>
               </div>
             </div>
