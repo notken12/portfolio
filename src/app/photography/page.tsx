@@ -20,7 +20,7 @@ cloudinary.config({
 
 export const metadata: Metadata = {
     title: "Photography",
-    description: "A collection of photography by myself.",
+    description: "A collection of my photography.",
 };
 
 const getBase64 = async (src: ArrayBuffer, size: number) => {
