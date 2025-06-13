@@ -110,7 +110,7 @@ export default async function PhotographyPage() {
                                                     <span>f/{photo.metadata.FNumber}</span>
                                                     <span>1/{1 / photo.metadata.ExposureTime}s</span>
                                                     <span>ISO {photo.metadata.ISO}</span>
-                                                    <span>{photo.metadata.ExposureCompensation === 0 ? "±" : ""}{photo.metadata.ExposureCompensation} EV</span>
+                                                    <span>{photo.metadata.ExposureCompensation === 0 ? "±" : photo.metadata.ExposureCompensation > 0 ? "+" : ""}{photo.metadata.ExposureCompensation} EV</span>
                                                 </div>
                                                 <div className="flex gap-2 flex-wrap">
                                                     <span className="font-semibold">{photo.metadata.Make} {photo.metadata.Model}</span>
