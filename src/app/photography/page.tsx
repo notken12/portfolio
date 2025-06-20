@@ -44,7 +44,7 @@ async function getBlurPreviewAndMetadata(public_id: string) {
 async function getPhotos() {
     console.log('Refetching photos')
     try {
-        const res = await cloudinary.api.resources_by_tag('photography', { resource_type: 'image', tags: true })
+        const res = await cloudinary.api.resources_by_tag('photography', { resource_type: 'image', tags: true, max_results: 500, })
         return Promise.all(res.resources.map(async resource => {
             const { blurDataURL, metadata } = await getBlurPreviewAndMetadata(resource.secure_url)
             return {
@@ -67,7 +67,7 @@ const getThumbUrl = (public_id: string) => {
 }
 
 export default async function PhotographyPage() {
-    const photos = await getPhotos()
+    const photos = await cachedGetPhotos()
     return (
         <div className="container mx-auto px-4 py-8">
             <Breadcrumb className="pb-8 px-2">
