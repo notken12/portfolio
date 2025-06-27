@@ -12,12 +12,12 @@ import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import Link from "next/link";
 import { LinkPreview } from "@/components/ui/link-preview";
 import { Badge } from "@/components/ui/badge";
-import { Code, Github, Linkedin, MapPin, MapPinned, Mail, Aperture } from "lucide-react";
+import { MapPin, Mail, Aperture } from "lucide-react";
 import { ModeToggle } from "@/components/mode-toggle";
 
 export default function Home() {
   return (
-    <div className="w-full relative flex flex-col flex-grow items-center justify-start bg-background dark:bg-neutral-800 lg:bg-neutral-350 lg:dark:bg-black">
+    <div className="w-full relative flex flex-col flex-grow items-center justify-start bg-background dark:bg-neutral-800 lg:bg-neutral-300 lg:dark:bg-neutral-900">
       <div className="max-w-screen-md h-full p-8 bg-background shadow-[0px_0px_200px_220px_hsl(var(--background))] dark:bg-neutral-800 dark:shadow-[0px_0px_200px_220px_rgb(38_38_38_/_var(--tw-bg-opacity))]">
         <div className="flex flex-col flex-grow max-w-screen-md w-full mt-8 gap-8 mb-16">
           <section className="w-full flex flex-col items-start">
@@ -33,7 +33,7 @@ export default function Home() {
             </p>
           </section>
 
-          <section className="w-full flex flex-col items-start mb-8">
+          {/* <section className="w-full flex flex-col items-start mb-8">
             <h2 className="scroll-m-20 text-xl font-semibold tracking-tight font-handwriting">
               🛠️ Currently building...
             </h2>
@@ -83,11 +83,6 @@ export default function Home() {
                       rotateZ={6}
                       translateZ={30}
                     >
-                      {/* <div className="flex justify-start p-1 gap-[0.2rem] h-4 items-center">
-                        <div className="bg-red-500 rounded-full w-2 h-2"></div>
-                        <div className="bg-yellow-500 rounded-full w-2 h-2"></div>
-                        <div className="bg-green-500 rounded-full w-2 h-2"></div>
-                      </div> */}
                       <img
                         src="/images/usbstation.webp"
                         alt="USB Charging Station"
@@ -128,7 +123,7 @@ export default function Home() {
                 </div>
               </CardBody>
             </CardContainer>
-          </section>
+          </section> */}
 
           <section className="w-full flex flex-col items-start">
             <h2 className="scroll-m-20 text-xl font-semibold tracking-tight">
@@ -178,35 +173,6 @@ export default function Home() {
                 >
                   <MapPin className="w-4 h-4 inline-flex align-text-top mr-1" />
                   HackTJ 11.0
-                </a>
-              </p>
-
-              <div className="flex flex-row sm:flex-col justify-between sm:justify-normal items-center gap-1 sm:items-end mb-4 sm:mb-0">
-                <LinkPreview
-                  className="font-semibold text-primary underline underline-offset-4 leading-7"
-                  url="https://machinistmath.com"
-                >
-                  MachinistMath
-                </LinkPreview>
-                <Badge variant={"default"}>
-                  <a
-                    href="https://youtu.be/ON7P5-9bsa4?si=07h1pzzJWax6ox_5&t=263"
-                    target="_blank"
-                  >
-                    🏆 Best Product Innovation
-                  </a>
-                </Badge>
-              </div>
-              <p className="leading-7 mb-6 sm:mb-0 sm:ml-4">
-                Simplify tedious and error prone machining calculations with
-                this voice-powered calculator, even with dirty hands.&nbsp;
-                <a
-                  className="text-muted-foreground text-sm underline underline-offset-4 text-nowrap"
-                  href="https://venturecamp.org"
-                  target="_blank"
-                >
-                  <MapPin className="w-4 h-4 inline-flex align-text-top mr-1" />
-                  Venture Camp S24
                 </a>
               </p>
 
@@ -336,8 +302,10 @@ export default function Home() {
               <hr className="flex-grow"></hr>
               <div className="flex gap-4">
                 <a href="https://github.com/notken12" target="_blank">
-                  <img
+                  <Image
                     src="/images/github-mark.svg"
+                    width={98}
+                    height={96}
                     alt="Github"
                     className="w-6 h-6 contrast-50 dark:invert dark:contrast-100"
                   />
@@ -346,14 +314,18 @@ export default function Home() {
                   href="https://www.linkedin.com/in/ken-zhou-8013bb242/"
                   target="_blank"
                 >
-                  <img
+                  <Image
                     src="/images/linkedin.svg"
                     alt="LinkedIn"
+                    width={800}
+                    height={800}
                     className="w-6 h-6 block dark:hidden rounded filter contrast-[.3]"
                   />
-                  <img
+                  <Image
                     src="/images/linkedin.svg"
                     alt="LinkedIn"
+                    width={800}
+                    height={800}
                     className="w-6 h-6 hidden dark:block rounded"
                     style={{
                       filter: "invert(100%) brightness(88%) contrast(90%)",
