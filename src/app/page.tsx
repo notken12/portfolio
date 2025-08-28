@@ -29,7 +29,15 @@ export default function Home() {
             </div>
 
             <p className="leading-7 [&:not(:first-child)]:mt-3">
-              I'm a 18 year old full-stack developer who loves my dog Mango.
+              I'm a 18 year old full-stack developer who loves spending time with my dog Mango, exploring the world, taking{" "}
+              <LinkPreview className="font-semibold text-primary underline underline-offset-4 leading-7"
+                url="/photography">pictures</LinkPreview>, and other things. <br /> I'm currently working at{" "}
+              <LinkPreview
+                className="font-semibold text-primary underline underline-offset-4 leading-7"
+                url="https://www.a37.ai"
+              >
+                a37
+              </LinkPreview>, the applied AI lab reimagining DevOps.
             </p>
           </section>
 
@@ -187,7 +195,7 @@ export default function Home() {
               <p className="leading-7 mb-6 sm:mb-0 sm:ml-4">
                 Automatically add license headers to source code with just one
                 command.&nbsp;
-                <span className="font-mono font-semibold">10000+</span>
+                <span className="font-mono font-semibold">20000+</span>
                 &nbsp;downloads.
               </p>
 
