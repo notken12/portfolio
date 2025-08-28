@@ -28,12 +28,12 @@ export default function Home() {
               <ModeToggle />
             </div>
 
-            <p className="leading-7 [&:not(:first-child)]:mt-3">
+            <div className="leading-7 [&:not(:first-child)]:mt-3">
               I'm a software engineer who loves spending time with my dog Mango, exploring the world, taking{" "}
               <Link className="font-semibold text-primary underline underline-offset-4 leading-7"
                 href="/photography">pictures</Link>, and other things.
-            </p>
-            <p className="leading-7 [&:not(:first-child)]:mt-3">
+            </div>
+            <div className="leading-7 [&:not(:first-child)]:mt-3">
               I'm currently working at{" "}
               <LinkPreview
                 className="font-semibold text-primary underline underline-offset-4 leading-7"
@@ -41,7 +41,7 @@ export default function Home() {
               >
                 a37
               </LinkPreview>, the applied AI lab reimagining DevOps.
-            </p>
+            </div>
           </section>
 
           {/* <section className="w-full flex flex-col items-start mb-8">
