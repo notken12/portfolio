@@ -66,6 +66,8 @@ const getThumbUrl = (public_id: string) => {
     return cloudinary.url(public_id, { sdk_semver: '>=2.6.1', transformation: [{ crop: 'thumb', width: 1000 }, { quality: "auto:good", format: 'auto' }] })
 }
 
+export const maxDuration = 60; // This function can run for a maximum of 60 seconds
+
 export default async function PhotographyPage() {
     const photos = await cachedGetPhotos()
     return (
