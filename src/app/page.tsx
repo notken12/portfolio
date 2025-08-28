@@ -29,9 +29,12 @@ export default function Home() {
             </div>
 
             <p className="leading-7 [&:not(:first-child)]:mt-3">
-              I'm a 18 year old full-stack developer who loves spending time with my dog Mango, exploring the world, taking{" "}
-              <LinkPreview className="font-semibold text-primary underline underline-offset-4 leading-7"
-                url="/photography">pictures</LinkPreview>, and other things. <br /> I'm currently working at{" "}
+              I'm a software engineer who loves spending time with my dog Mango, exploring the world, taking{" "}
+              <Link className="font-semibold text-primary underline underline-offset-4 leading-7"
+                href="/photography">pictures</Link>, and other things.
+            </p>
+            <p className="leading-7 [&:not(:first-child)]:mt-3">
+              I'm currently working at{" "}
               <LinkPreview
                 className="font-semibold text-primary underline underline-offset-4 leading-7"
                 url="https://www.a37.ai"
