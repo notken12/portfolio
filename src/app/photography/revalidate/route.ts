@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { revalidatePath } from "next/cache";
 
+export const maxDuration = 120; // This function can run for a maximum of 120 seconds
+
 // Webhook: https://<your-site>/photography/revalidate?secret=<token>
 export async function POST(request: NextRequest) {
     const secret = request.nextUrl.searchParams.get("secret");
