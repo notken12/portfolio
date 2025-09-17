@@ -304,7 +304,7 @@ export default function Home() {
               <div className="flex flex-row gap-4 items-center">
                 <Mail />
                 <a
-                  href="mailto:kendotzhou@gmail.com"
+                  href="mailto:kenzhou084@gmail.com"
                   className=" underline underline-offset-4 mb-[0.1rem]"
                 >
                   Contact me
