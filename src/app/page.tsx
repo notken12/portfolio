@@ -167,6 +167,28 @@ export default function Home() {
               <div className="flex flex-row sm:flex-col justify-between sm:justify-normal items-center gap-1 sm:items-end mb-4 sm:mb-0">
                 <LinkPreview
                   className="font-semibold text-primary underline underline-offset-4 leading-7"
+                  url="https://github.com/notken12/remember?tab=readme-ov-file"
+                >
+                  Remember
+                </LinkPreview>
+                <Badge variant={"default"}>🏆 Best Healthcare Hack</Badge>
+              </div>
+
+              <p className="leading-7 mb-6 sm:mb-0 sm:ml-4">
+                AI memory recall therapist for Alzheimer’s patients. Runs on smart glasses, records user's day, and uses study-backed therapy techniques to train recall. Recollect, relive, remember.&nbsp;
+                <a
+                  className="text-muted-foreground text-sm underline underline-offset-4 text-nowrap"
+                  href="https://hackmit.org"
+                  target="_blank"
+                >
+                  <MapPin className="w-4 h-4 inline-flex align-text-top mr-1" />
+                  HackMIT 2025
+                </a>
+              </p>
+
+              <div className="flex flex-row sm:flex-col justify-between sm:justify-normal items-center gap-1 sm:items-end mb-4 sm:mb-0">
+                <LinkPreview
+                  className="font-semibold text-primary underline underline-offset-4 leading-7"
                   url="https://cider-app.vercel.app"
                 >
                   Cider
