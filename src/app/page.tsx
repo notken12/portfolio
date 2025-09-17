@@ -29,9 +29,9 @@ export default function Home() {
             </div>
 
             <div className="leading-7 [&:not(:first-child)]:mt-3">
-              I'm a software engineer who loves spending time with my dog Mango, exploring the world, taking{" "}
+              I'm a software engineer who loves spending time with my dog Mango, exploring the outdoors, and taking beautiful{" "}
               <Link className="font-semibold text-primary underline underline-offset-4 leading-7"
-                href="/photography">pictures</Link>, and other things.
+                href="/photography">photos</Link>.
             </div>
             <div className="leading-7 [&:not(:first-child)]:mt-3">
               I'm currently working at{" "}
