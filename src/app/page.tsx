@@ -1,24 +1,21 @@
-"use client";
-
-import Image from "next/image";
 import Link from "next/link";
 import { LinkPreview } from "@/components/ui/link-preview";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Mail, Aperture, TvMinimalPlay } from "lucide-react";
-import { ModeToggle } from "@/components/mode-toggle";
+import { MapPin, Mail, TvMinimalPlay } from "lucide-react";
+import { TopNav } from "@/components/top-nav";
+import { getPhotos } from "@/lib/photos";
 
-export default function Home() {
+export default async function Home() {
+  const navPhotos = (await getPhotos()).slice(0, 7);
   return (
     <div className="w-full relative flex flex-col flex-grow items-center justify-start spotlight bg-background dark:bg-neutral-800 lg:bg-neutral-300 lg:dark:bg-neutral-900">
       <div className="max-w-screen-md h-full p-8">
         <div className="flex flex-col flex-grow max-w-screen-md w-full mt-8 gap-8 mb-16">
+          <TopNav photos={navPhotos} />
           <section className="w-full flex flex-col items-start">
-            <div className="flex flex-row justify-between w-full items-center mt-8">
-              <h1 className="scroll-m-20 text-3xl font-semibold tracking-tight">
-                Hi, I'm Ken.
-              </h1>
-              <ModeToggle />
-            </div>
+            <h1 className="scroll-m-20 text-3xl font-semibold tracking-tight mt-8">
+              Hi, I'm Ken.
+            </h1>
 
             <div className="leading-7 [&:not(:first-child)]:mt-3">
               I'm a software engineer who loves spending time with my dog Mango, exploring the outdoors, and taking beautiful{" "}
@@ -147,63 +144,24 @@ export default function Home() {
             </div>
           </section>
           <section className="w-full flex flex-col items-start">
-            <div className="flex gap-4 flex-row w-full items-center mt-7 flex-wrap">
-              <p className="text-sm text-muted-foreground">
-                Portfolio design by{" "}
-                <a
-                  href="https://github.com/notken12"
-                  target="_blank"
-                  className="underline underline-offset-4"
-                >
-                  Ken Zhou
-                </a>
-                .&nbsp;Use with attribution is welcome.&nbsp;
-                <a
-                  href="https://github.com/notken12/portfolio"
-                  target="_blank"
-                  className="underline underline-offset-4"
-                >
-                  Source
-                </a>
-              </p>
-              <hr className="flex-grow"></hr>
-              <div className="flex gap-4">
-                <a href="https://github.com/notken12" target="_blank">
-                  <Image
-                    src="/images/github-mark.svg"
-                    width={98}
-                    height={96}
-                    alt="Github"
-                    className="w-6 h-6 contrast-50 dark:invert dark:contrast-100"
-                  />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/ken-zhou-8013bb242/"
-                  target="_blank"
-                >
-                  <Image
-                    src="/images/linkedin.svg"
-                    alt="LinkedIn"
-                    width={800}
-                    height={800}
-                    className="w-6 h-6 block dark:hidden rounded filter contrast-[.3]"
-                  />
-                  <Image
-                    src="/images/linkedin.svg"
-                    alt="LinkedIn"
-                    width={800}
-                    height={800}
-                    className="w-6 h-6 hidden dark:block rounded"
-                    style={{
-                      filter: "invert(100%) brightness(88%) contrast(90%)",
-                    }}
-                  />
-                </a>
-                <a href="/photography">
-                  <Aperture className="w-6 h-6" />
-                </a>
-              </div>
-            </div>
+            <p className="text-sm text-muted-foreground mt-7">
+              Portfolio design by{" "}
+              <a
+                href="https://github.com/notken12"
+                target="_blank"
+                className="underline underline-offset-4"
+              >
+                Ken Zhou
+              </a>
+              .&nbsp;Use with attribution is welcome.&nbsp;
+              <a
+                href="https://github.com/notken12/portfolio"
+                target="_blank"
+                className="underline underline-offset-4"
+              >
+                Source
+              </a>
+            </p>
           </section>
         </div>
       </div>
