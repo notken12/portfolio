@@ -71,7 +71,7 @@ export function TopNav({ photos }: { photos: Photo[] }) {
             }}
           />
         </a>
-        <ModeToggle />
+        <ModeToggle className="h-6 w-6" />
       </div>
     </header>
   );
