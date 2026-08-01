@@ -83,3 +83,39 @@ body {
   font-family: "Virgil";
   src: url("/fonts/Virgil.woff2") format("woff2");
 }
+
+/* Light pool cast by a source centered horizontally, 30rem above the top of
+   the frame. Falloff stops are sampled from a smootherstep curve: fewer,
+   hand-placed stops produce visible Mach bands at each slope change. The
+   oklch interpolation forces the float-precision dithered gradient
+   rasterizer, avoiding 8-bit quantization banding. */
+.spotlight {
+  background-image: radial-gradient(
+      48rem 110rem at 50% -30rem in oklch,
+      hsl(var(--background)) 28%,
+      hsl(var(--background) / 0.999) 31%,
+      hsl(var(--background) / 0.995) 34%,
+      hsl(var(--background) / 0.984) 37%,
+      hsl(var(--background) / 0.964) 40%,
+      hsl(var(--background) / 0.936) 43%,
+      hsl(var(--background) / 0.896) 46%,
+      hsl(var(--background) / 0.848) 49%,
+      hsl(var(--background) / 0.79) 52%,
+      hsl(var(--background) / 0.725) 55%,
+      hsl(var(--background) / 0.653) 58%,
+      hsl(var(--background) / 0.578) 61%,
+      hsl(var(--background) / 0.5) 64%,
+      hsl(var(--background) / 0.422) 67%,
+      hsl(var(--background) / 0.347) 70%,
+      hsl(var(--background) / 0.275) 73%,
+      hsl(var(--background) / 0.21) 76%,
+      hsl(var(--background) / 0.152) 79%,
+      hsl(var(--background) / 0.104) 82%,
+      hsl(var(--background) / 0.065) 85%,
+      hsl(var(--background) / 0.036) 88%,
+      hsl(var(--background) / 0.016) 91%,
+      hsl(var(--background) / 0.005) 94%,
+      hsl(var(--background) / 0.001) 97%,
+      hsl(var(--background) / 0) 100%
+    );
+}
