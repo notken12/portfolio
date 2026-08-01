@@ -6,7 +6,7 @@ const nextConfig = {
         hostname: "images.unsplash.com",
       },
       {
-        hostname: "res.cloudinary.com",
+        hostname: "photos.kenzhou.dev",
       },
       {
         hostname: "api.microlink.io",
