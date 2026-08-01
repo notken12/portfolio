@@ -12,7 +12,10 @@ export default async function Home() {
       <div className="max-w-screen-md h-full p-8">
         <div className="flex flex-col flex-grow max-w-screen-md w-full mt-8 gap-8 mb-16">
           <TopNav photos={navPhotos} />
-          <section className="w-full flex flex-col items-start">
+          <section
+            className="w-full flex flex-col items-start fade-in-section"
+            style={{ animationDelay: "0ms" }}
+          >
             <h1 className="scroll-m-20 text-3xl font-semibold tracking-tight mt-8">
               Hi, I'm Ken.
             </h1>
@@ -33,7 +36,10 @@ export default async function Home() {
             </div>
           </section>
 
-          <section className="w-full flex flex-col items-start">
+          <section
+            className="w-full flex flex-col items-start fade-in-section"
+            style={{ animationDelay: "150ms" }}
+          >
             <h2 className="scroll-m-20 text-xl font-semibold tracking-tight">
               My projects
             </h2>
@@ -130,7 +136,10 @@ export default async function Home() {
               </p>
             </div>
           </section>
-          <section className="w-full flex flex-col items-center">
+          <section
+            className="w-full flex flex-col items-center fade-in-section"
+            style={{ animationDelay: "300ms" }}
+          >
             <div className="grid grid-cols-1 sm:grid-cols-[auto_1fr] sm:gap-y-6 mt-6">
               <div className="flex flex-row gap-4 items-center">
                 <Mail className="size-5" />
@@ -143,7 +152,10 @@ export default async function Home() {
               </div>
             </div>
           </section>
-          <section className="w-full flex flex-col items-start">
+          <section
+            className="w-full flex flex-col items-start fade-in-section"
+            style={{ animationDelay: "450ms" }}
+          >
             <p className="text-sm text-muted-foreground mt-7">
               Portfolio design by{" "}
               <a
