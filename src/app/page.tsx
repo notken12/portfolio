@@ -12,7 +12,7 @@ import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import Link from "next/link";
 import { LinkPreview } from "@/components/ui/link-preview";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Mail, Aperture } from "lucide-react";
+import { MapPin, Mail, Aperture, TvMinimalPlay } from "lucide-react";
 import { ModeToggle } from "@/components/mode-toggle";
 
 export default function Home() {
@@ -37,10 +37,10 @@ export default function Home() {
               I'm currently working at{" "}
               <LinkPreview
                 className="font-semibold text-primary underline underline-offset-4 leading-7"
-                url="https://www.a37.ai"
+                url="https://www.loop.com"
               >
-                a37
-              </LinkPreview>, the applied AI lab reimagining DevOps.
+                Loop
+              </LinkPreview>, the AI intelligence layer for logistics.
             </div>
           </section>
 
@@ -171,11 +171,11 @@ export default function Home() {
                 >
                   Remember
                 </LinkPreview>
-                <Badge variant={"default"}>🏆 Best Healthcare Hack</Badge>
+                <Badge variant={"default"}>🏆 1st @ HackMIT - Healthcare</Badge>
               </div>
 
               <p className="leading-7 mb-6 sm:mb-0 sm:ml-4">
-                AI memory recall therapist for Alzheimer’s patients. Runs on smart glasses, records user's day, and uses study-backed therapy techniques to train recall. Recollect, relive, remember.&nbsp;
+                AI memory recall therapist for Alzheimer’s patients. Runs on smart glasses, records user's day, and uses study-backed therapy techniques to train recall. &nbsp;
                 <a
                   className="text-muted-foreground text-sm underline underline-offset-4 text-nowrap"
                   href="https://hackmit.org"
@@ -183,6 +183,37 @@ export default function Home() {
                 >
                   <MapPin className="w-4 h-4 inline-flex align-text-top mr-1" />
                   HackMIT 2025
+                </a>
+              </p>
+
+              <div className="flex flex-row sm:flex-col justify-between sm:justify-normal items-center gap-1 sm:items-end mb-4 sm:mb-0">
+                <div className="flex flex-row gap-2 items-center">
+                  <LinkPreview
+                    className="font-semibold text-primary underline underline-offset-4 leading-7"
+                    url="https://github.com/HyunLee8/wallhax"
+                  >
+                    WallHax
+                  </LinkPreview>
+                  <span className="text-muted-foreground text-sm">&#8226;</span>
+                  <LinkPreview
+                    className="font-semibold text-primary underline-offset-4 leading-7 flex items-center"
+                    url="https://youtu.be/II26dfXLtV0"
+                  >
+                    <TvMinimalPlay className="size-4" />&nbsp;&nbsp;Demo
+                  </LinkPreview>
+                </div>
+                <Badge variant={"default"}>🏆 1st @ HooHacks - AI</Badge>
+              </div>
+
+              <p className="leading-7 mb-6 sm:mb-0 sm:ml-4">
+                AR that disaster response teams see teammates through walls and review a 3D replay of their mission.&nbsp;
+                <a
+                  className="text-muted-foreground text-sm underline underline-offset-4 text-nowrap"
+                  href="https://hoohacks.io"
+                  target="_blank"
+                >
+                  <MapPin className="w-4 h-4 inline-flex align-text-top mr-1" />
+                  HooHacks 2026
                 </a>
               </p>
 
@@ -226,27 +257,6 @@ export default function Home() {
 
               <div className="flex flex-row sm:flex-col justify-between sm:justify-normal items-center gap-1 sm:items-end mb-4 sm:mb-0">
                 <LinkPreview
-                  className="font-semibold text-primary underline underline-offset-4 leading-7"
-                  url="https://pharma-check.vercel.app"
-                >
-                  PharmaCheck
-                </LinkPreview>
-              </div>
-              <p className="leading-7 mb-6 sm:mb-0 sm:ml-4">
-                Scan medicine to check for dangerous drug interactions.
-                Developed with computer vision and medical databases.&nbsp;
-                <a
-                  className="text-muted-foreground text-sm underline underline-offset-4 text-nowrap"
-                  href="https://www.hackthenest.org/"
-                  target="_blank"
-                >
-                  <MapPin className="w-4 h-4 inline-flex align-text-top mr-1" />
-                  Hack the Nest
-                </a>
-              </p>
-
-              <div className="flex flex-row sm:flex-col justify-between sm:justify-normal items-center gap-1 sm:items-end mb-4 sm:mb-0">
-                <LinkPreview
                   className="font-semibold text-primary underline underline-offset-4 leading-7 text-nowrap"
                   url="https://github.com/notken12/mangochat"
                 >
@@ -273,27 +283,6 @@ export default function Home() {
                   HackTJ 9.0
                 </a>
               </p>
-
-              <div className="flex flex-row sm:flex-col justify-between sm:justify-normal items-center gap-1 sm:items-end mb-4 sm:mb-0">
-                <LinkPreview
-                  className="font-semibold text-primary underline underline-offset-4 leading-7 text-nowrap"
-                  url="https://mypantry-notken12.vercel.app/"
-                >
-                  MyPantry
-                </LinkPreview>
-              </div>
-              <p className="leading-7 mb-6 sm:mb-0 sm:ml-4">
-                Discover and run pantries. Track available goods and
-                donate/check out items.&nbsp;
-                <a
-                  className="text-muted-foreground text-sm underline underline-offset-4 text-nowrap"
-                  href="https://www.congressionalappchallenge.us/"
-                  target="_blank"
-                >
-                  <MapPin className="w-4 h-4 inline-flex align-text-top mr-1" />
-                  Congressional App Challenge
-                </a>
-              </p>
             </div>
           </section>
           <section className="w-full flex flex-col items-center">
@@ -302,12 +291,12 @@ export default function Home() {
             </h2> */}
             <div className="grid grid-cols-1 sm:grid-cols-[auto_1fr] sm:gap-y-6 mt-6">
               <div className="flex flex-row gap-4 items-center">
-                <Mail />
+                <Mail className="size-5" />
                 <a
                   href="mailto:kenzhou084@gmail.com"
                   className=" underline underline-offset-4 mb-[0.1rem]"
                 >
-                  Contact me
+                  Say hi
                 </a>
               </div>
             </div>
