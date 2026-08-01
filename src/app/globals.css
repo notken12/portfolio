@@ -127,7 +127,8 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .signature-stroke,
   .signature-flood,
-  .fade-in-section {
+  .fade-in-section,
+  .spotlight::before {
     animation: none;
   }
   .signature-stroke {
@@ -142,8 +143,21 @@ body {
    the frame. Falloff stops are sampled from a smootherstep curve: fewer,
    hand-placed stops produce visible Mach bands at each slope change. The
    oklch interpolation forces the float-precision dithered gradient
-   rasterizer, avoiding 8-bit quantization banding. */
+   rasterizer, avoiding 8-bit quantization banding.
+
+   The gradient lives on a ::before layer so it can fade in on its own,
+   300ms after the last fade-in-section finishes (200ms base delay
+   + 450ms stagger + 500ms fade + 300ms = 1.45s). */
 .spotlight {
+  isolation: isolate;
+}
+
+.spotlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  animation: section-fade-in 0.5s ease-out 1.45s both;
   background-image: radial-gradient(
       48rem 110rem at 50% -30rem in oklch,
       hsl(var(--background)) 28%,

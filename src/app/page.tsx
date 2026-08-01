@@ -14,7 +14,7 @@ export default async function Home() {
           <TopNav photos={navPhotos} />
           <section
             className="w-full flex flex-col items-start fade-in-section"
-            style={{ animationDelay: "0ms" }}
+            style={{ animationDelay: "200ms" }}
           >
             <h1 className="scroll-m-20 text-3xl font-semibold tracking-tight mt-8">
               Hi, I'm Ken.
@@ -38,7 +38,7 @@ export default async function Home() {
 
           <section
             className="w-full flex flex-col items-start fade-in-section"
-            style={{ animationDelay: "150ms" }}
+            style={{ animationDelay: "350ms" }}
           >
             <h2 className="scroll-m-20 text-xl font-semibold tracking-tight">
               My projects
@@ -138,7 +138,7 @@ export default async function Home() {
           </section>
           <section
             className="w-full flex flex-col items-center fade-in-section"
-            style={{ animationDelay: "300ms" }}
+            style={{ animationDelay: "500ms" }}
           >
             <div className="grid grid-cols-1 sm:grid-cols-[auto_1fr] sm:gap-y-6 mt-6">
               <div className="flex flex-row gap-4 items-center">
@@ -154,7 +154,7 @@ export default async function Home() {
           </section>
           <section
             className="w-full flex flex-col items-start fade-in-section"
-            style={{ animationDelay: "450ms" }}
+            style={{ animationDelay: "650ms" }}
           >
             <p className="text-sm text-muted-foreground mt-7">
               Portfolio design by{" "}
