@@ -25,7 +25,10 @@ const hoverShift = [
 
 export function TopNav({ photos }: { photos: Photo[] }) {
   return (
-    <header className="flex w-full items-center gap-4">
+    <header
+      className="flex w-full items-center gap-4 fade-in-section"
+      style={{ animationDelay: "200ms" }}
+    >
       <Signature className="h-6 w-auto shrink-0 text-muted-foreground" />
       <hr className="flex-grow" />
       {photos.length > 0 && (
