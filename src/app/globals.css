@@ -77,11 +77,51 @@ body {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
+  font-size: 15px;
 }
 
 @font-face {
   font-family: "Virgil";
   src: url("/fonts/Virgil.woff2") format("woff2");
+}
+
+.signature-stroke {
+  stroke-dasharray: 1 1;
+  stroke-dashoffset: 1;
+  animation: signature-draw 0.9s linear both;
+}
+
+/* The pen mask stroke is narrower than the ink at its thickest so that close
+   parallel lines (the K arm loop) are revealed on separate passes; this flood
+   then uncovers the leftover slivers right as the pen finishes. */
+.signature-flood {
+  opacity: 0;
+  animation: signature-flood 0.3s linear 0.9s both;
+}
+
+@keyframes signature-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes signature-flood {
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .signature-stroke,
+  .signature-flood {
+    animation: none;
+  }
+  .signature-stroke {
+    stroke-dashoffset: 0;
+  }
+  .signature-flood {
+    opacity: 1;
+  }
 }
 
 /* Light pool cast by a source centered horizontally, 30rem above the top of

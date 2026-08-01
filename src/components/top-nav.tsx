@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ModeToggle } from "@/components/mode-toggle";
+import { Signature } from "@/components/signature";
 import { navUrl, type Photo } from "@/lib/photos";
 
 const photoTilts = [
@@ -13,19 +14,30 @@ const photoTilts = [
   "-rotate-6 translate-y-0.5",
 ];
 
+const hoverShift = [
+  "[.nav-photo:hover+&]:translate-x-2.5",
+  "[.nav-photo:hover+.nav-photo+&]:translate-x-1",
+  "[.nav-photo:hover+.nav-photo+.nav-photo+&]:translate-x-0.5",
+  "[&:has(+.nav-photo:hover)]:-translate-x-2.5",
+  "[&:has(+.nav-photo+.nav-photo:hover)]:-translate-x-1",
+  "[&:has(+.nav-photo+.nav-photo+.nav-photo:hover)]:-translate-x-0.5",
+].join(" ");
+
 export function TopNav({ photos }: { photos: Photo[] }) {
   return (
     <header className="flex w-full items-center gap-4">
+      <Signature className="h-6 w-auto shrink-0 text-muted-foreground" />
+      <hr className="flex-grow" />
       {photos.length > 0 && (
         <Link
           href="/photography"
           aria-label="Photography"
-          className="flex items-center"
+          className="flex items-center text-muted-foreground text-sm"
         >
           {photos.map((photo, i) => (
             <div
               key={photo.slug}
-              className={`relative shrink-0 -ml-1.5 first:ml-0 bg-white p-1 border border-neutral-300 shadow-sm transition-transform duration-200 hover:z-10 hover:scale-125 hover:rotate-0 ${photoTilts[i % photoTilts.length]} ${i >= 4 ? "hidden md:block" : ""}`}
+              className={`nav-photo relative shrink-0 -ml-1.5 first:ml-0 bg-white p-0.5 border border-neutral-300 shadow-sm transition-transform duration-200 ${hoverShift} ${photoTilts[i % photoTilts.length]} ${i >= 4 ? "hidden md:block" : ""}`}
             >
               <Image
                 src={navUrl(photo)}
