@@ -18,6 +18,7 @@ import {
     ListObjectsV2Command,
     PutObjectCommand,
     S3Client,
+    S3ServiceException,
 } from "@aws-sdk/client-s3";
 import exifr from "exifr";
 import sharp from "sharp";
@@ -73,6 +74,26 @@ const s3 = new S3Client({
 
 const slugOf = (file: string) => path.parse(file).name.replace(/[^\w-]/g, "-");
 
+// R2 uploads intermittently die with TLS-level errors (e.g. "bad record mac")
+// under concurrency, which the AWS SDK does not consider retryable.
+const MAX_ATTEMPTS = 4;
+
+async function withRetry<T>(label: string, fn: () => Promise<T>): Promise<T> {
+    for (let attempt = 1; ; attempt++) {
+        try {
+            return await fn();
+        } catch (error) {
+            const isClientError =
+                error instanceof S3ServiceException &&
+                error.$metadata.httpStatusCode !== undefined &&
+                error.$metadata.httpStatusCode < 500;
+            if (isClientError || attempt >= MAX_ATTEMPTS) throw error;
+            console.warn(`retrying ${label} (attempt ${attempt} failed: ${error})`);
+            await new Promise((resolve) => setTimeout(resolve, attempt * 1000));
+        }
+    }
+}
+
 async function mapLimit<T, R>(items: T[], limit: number, fn: (item: T) => Promise<R>): Promise<R[]> {
     const results: R[] = new Array(items.length);
     let next = 0;
@@ -88,20 +109,24 @@ async function mapLimit<T, R>(items: T[], limit: number, fn: (item: T) => Promis
 }
 
 async function putObject(key: string, body: Buffer | string, contentType: string, cacheControl: string) {
-    await s3.send(
-        new PutObjectCommand({
-            Bucket: bucket,
-            Key: key,
-            Body: body,
-            ContentType: contentType,
-            CacheControl: cacheControl,
-        }),
+    await withRetry(`put ${key}`, () =>
+        s3.send(
+            new PutObjectCommand({
+                Bucket: bucket,
+                Key: key,
+                Body: body,
+                ContentType: contentType,
+                CacheControl: cacheControl,
+            }),
+        ),
     );
 }
 
 async function getExistingManifest(): Promise<Photo[]> {
     try {
-        const res = await s3.send(new GetObjectCommand({ Bucket: bucket, Key: MANIFEST_KEY }));
+        const res = await withRetry("get manifest", () =>
+            s3.send(new GetObjectCommand({ Bucket: bucket, Key: MANIFEST_KEY })),
+        );
         if (!res.Body) throw new Error("Manifest response had no body");
         return JSON.parse(await res.Body.transformToString());
     } catch (error) {
@@ -189,8 +214,8 @@ async function pruneStaleObjects(photos: Photo[]) {
     const keys: string[] = [];
     let continuationToken: string | undefined;
     do {
-        const page = await s3.send(
-            new ListObjectsV2Command({ Bucket: bucket, ContinuationToken: continuationToken }),
+        const page = await withRetry("list objects", () =>
+            s3.send(new ListObjectsV2Command({ Bucket: bucket, ContinuationToken: continuationToken })),
         );
         keys.push(...(page.Contents ?? []).flatMap((object) => (object.Key ? [object.Key] : [])));
         continuationToken = page.NextContinuationToken;
@@ -198,11 +223,13 @@ async function pruneStaleObjects(photos: Photo[]) {
 
     const stale = keys.filter((key) => !expected.has(key));
     for (let i = 0; i < stale.length; i += 1000) {
-        await s3.send(
-            new DeleteObjectsCommand({
-                Bucket: bucket,
-                Delete: { Objects: stale.slice(i, i + 1000).map((Key) => ({ Key })) },
-            }),
+        await withRetry("delete stale objects", () =>
+            s3.send(
+                new DeleteObjectsCommand({
+                    Bucket: bucket,
+                    Delete: { Objects: stale.slice(i, i + 1000).map((Key) => ({ Key })) },
+                }),
+            ),
         );
     }
     if (stale.length > 0) console.log(`pruned ${stale.length} stale object(s)`);
