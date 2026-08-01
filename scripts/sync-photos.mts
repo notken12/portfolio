@@ -28,6 +28,12 @@ import {
     type PhotoExif,
 } from "../src/lib/photo-manifest";
 
+const folder = process.argv[2];
+if (!folder) {
+    console.error("Usage: npm run sync-photos -- <folder>");
+    process.exit(1);
+}
+
 const IMAGE_EXTENSIONS = new Set([".jpg", ".jpeg", ".png", ".webp", ".tif", ".tiff"]);
 const NAV_SIZE = 160;
 const THUMB_WIDTH = 1000;
@@ -212,12 +218,6 @@ async function revalidateSite() {
     const res = await fetch(`${siteUrl}/photography/revalidate?secret=${secret}`, { method: "POST" });
     if (!res.ok) throw new Error(`Revalidation failed: ${res.status} ${res.statusText}`);
     console.log("revalidated site");
-}
-
-const folder = process.argv[2];
-if (!folder) {
-    console.error("Usage: npm run sync-photos -- <folder>");
-    process.exit(1);
 }
 
 const files = (await readdir(folder))
