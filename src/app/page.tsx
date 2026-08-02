@@ -5,8 +5,19 @@ import { MapPin, Mail, TvMinimalPlay } from "lucide-react";
 import { TopNav } from "@/components/top-nav";
 import { getPhotos } from "@/lib/photos";
 
+function getEvenlySpaced<T>(arr: T[], n: number): T[] {
+  if (n <= 0) return [];
+  if (n >= arr.length) return [...arr];
+  if (n === 1) return [arr[0]];
+
+  return Array.from({ length: n }, (_, i) => {
+    const index = Math.round((i * (arr.length - 1)) / (n - 1));
+    return arr[index];
+  });
+}
+
 export default async function Home() {
-  const navPhotos = (await getPhotos()).slice(0, 7);
+  const navPhotos = getEvenlySpaced(await getPhotos(), 7)
   return (
     <div className="w-full relative flex flex-col flex-grow items-center justify-start spotlight bg-background dark:bg-neutral-800 lg:bg-neutral-200/90 lg:dark:bg-neutral-900">
       <div className="max-w-screen-md h-full p-8">
