@@ -80,7 +80,7 @@ export function TopNav({ photos }: { photos: Photo[] }) {
             alt="LinkedIn"
             width={800}
             height={800}
-            className="w-4 h-4 hidden dark:block rounded"
+            className="w-5 h-5 hidden dark:block rounded"
             style={{
               filter: "invert(100%) brightness(88%) contrast(90%)",
             }}
