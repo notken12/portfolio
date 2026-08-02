@@ -8,7 +8,7 @@ import { getPhotos } from "@/lib/photos";
 export default async function Home() {
   const navPhotos = (await getPhotos()).slice(0, 7);
   return (
-    <div className="w-full relative flex flex-col flex-grow items-center justify-start spotlight bg-background dark:bg-neutral-800 lg:bg-neutral-300 lg:dark:bg-neutral-900">
+    <div className="w-full relative flex flex-col flex-grow items-center justify-start spotlight bg-background dark:bg-neutral-800 lg:bg-neutral-200/90 lg:dark:bg-neutral-900">
       <div className="max-w-screen-md h-full p-8">
         <div className="flex flex-col flex-grow max-w-screen-md w-full mt-8 gap-8 mb-16">
           <TopNav photos={navPhotos} />

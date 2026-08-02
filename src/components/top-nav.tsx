@@ -61,7 +61,7 @@ export function TopNav({ photos }: { photos: Photo[] }) {
             width={98}
             height={96}
             alt="Github"
-            className="w-6 h-6 contrast-50 dark:invert dark:contrast-100"
+            className="w-5 h-5 contrast-50 dark:invert dark:contrast-100"
           />
         </a>
         <a
@@ -73,20 +73,20 @@ export function TopNav({ photos }: { photos: Photo[] }) {
             alt="LinkedIn"
             width={800}
             height={800}
-            className="w-6 h-6 block dark:hidden rounded filter contrast-[.3]"
+            className="w-5 h-5 block dark:hidden rounded filter contrast-[.3]"
           />
           <Image
             src="/images/linkedin.svg"
             alt="LinkedIn"
             width={800}
             height={800}
-            className="w-6 h-6 hidden dark:block rounded"
+            className="w-4 h-4 hidden dark:block rounded"
             style={{
               filter: "invert(100%) brightness(88%) contrast(90%)",
             }}
           />
         </a>
-        <ModeToggle className="h-6 w-6" />
+        <ModeToggle className="h-5 w-5 opacity-75" />
       </div>
     </header>
   );
